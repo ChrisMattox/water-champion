@@ -19,7 +19,7 @@ app.use(express.static('public'));
 app.use(bodyParser.json());
 
 // Decodes the token in the request header and attaches the decoded token to req.decodedToken on the request.
-app.use('/fishData', decoder.token);
+app.use(decoder.token);
 
 /* Whatever you do below this is protected by your authentication. */
 
