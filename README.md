@@ -1,16 +1,3 @@
-# Basics
-
-*Italic*, **Bold**, or ~~crossed out~~ text
-
-- Unordered
-- List
-- Items
-
-
-1. Ordered
-2. List
-3. Items
-
 # Water Champion
 
 **TO DO LIST**
