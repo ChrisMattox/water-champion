@@ -3,22 +3,27 @@ var app = angular.module("waterChampionApp", ["firebase", "ngRoute"]);
 //setting up routes for angular controllers. stretch goal is to have only this
 app.config(['$routeProvider', function($routeProvider) {
   $routeProvider
-  .when('/fishdata', {
-    templateUrl: '/views/templates/fishdata.html',
+  .when('/topfish', {
+    templateUrl: '/views/templates/topfish.html',
     controller: 'topFishCtrl',
     controllerAs: 'tfc'
   })
-  .when('/addFish', {
+  .when('/addfish', {
     templateUrl: '/views/templates/addfish.html',
-    controller: 'addCtrl',
-    controllerAs: 'ac'
+    controller: 'addFishCtrl',
+    controllerAs: 'afc'
+  })
+  .when('/viewfish', {
+    templateUrl: '/views/templates/viewfish.html',
+    controller: 'viewFishCtrl',
+    controllerAs: 'vfc'
   })
   .otherwise({
-    redirectTo: 'fishdata'
+    redirectTo: 'topfish'
   });
 }]); //close app.config
 
-//main contoller, controls login/out of app, more functionality tbd
+//top fish contoller, controls login/out of app, displaying initial fish
 app.controller("topFishCtrl", function($firebaseAuth, $http) {
 
 //set empty variables needed here
@@ -27,7 +32,6 @@ app.controller("topFishCtrl", function($firebaseAuth, $http) {
   var self = this;
   self.currentUser = {};
   self.fishData = {};
-
 
 // Executed login code. Calls to the server to get users fish data
   self.logIn = function(){
@@ -60,6 +64,13 @@ app.controller("topFishCtrl", function($firebaseAuth, $http) {
   });
 };
 
+function getFishData(){
+  $http.get('/fishData')
+  .then(function(response){
+    self.fishData = response.data;
+  });
+}
+
 // This code runs whenever the user changes authentication states, or whenever the hell it wants in my case
 auth.$onAuthStateChanged(function(user) {
   if (user) {
@@ -75,3 +86,14 @@ self.logOut = function(){
   });
 };
 });
+
+
+app.controller("addFishCtrl", ["$http", function($firebaseAuth, $http) {
+    var self = this;
+
+}]);
+
+app.controller("viewFishCtrl", ["$http", function($firebaseAuth, $http) {
+    var self = this;
+
+}]);

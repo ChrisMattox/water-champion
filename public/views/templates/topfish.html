@@ -1,0 +1,27 @@
+<button ng-click="tfc.logIn()">Log In</button>
+<button ng-click="tfc.logOut()">Log Out</button>
+<h1>Fish</h1>
+<table class="table table-hover table-inverse">
+  <thead>
+    <tr>
+      <th>Breed</th>
+      <th>Length</th>
+      <th>Weight</th>
+      <th>Girth</th>
+      <th>Location</th>
+      <th>Gear</th>
+      <th>Weather</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="fish in tfc.fishData">
+      <td>{{fish.breed}}</td>
+      <td>{{fish.length}}</td>
+      <td>{{fish.weight}}</td>
+      <td>{{fish.girth}}</td>
+      <td>{{fish.location}}</td>
+      <td>{{fish.gear}}</td>
+      <td>{{fish.weather}}</td>
+    </tr>
+  </tbody>
+</table>
