@@ -20,7 +20,7 @@
     <!-- Angular Application with Authentication -->
     <script src="scripts/client.js"></script>
     <!-- linking in factory and controllers -->
-    <script type="text/javascript" src="scripts/services/data.factory.js"></script>
+    <script type="text/javascript" src="scripts/services/fishdata.factory.js"></script>
     <script type="text/javascript" src="scripts/services/authdata.factory.js"></script>
     <script type="text/javascript" src="scripts/controllers/topfish.controller.js"></script>
     <script type="text/javascript" src="scripts/controllers/addfish.controller.js"></script>
@@ -28,6 +28,6 @@
   <body ng-app="waterChampionApp">
     <header ng-include="'/views/templates/header.html'" class="headerthing"></header>
     <div ng-include="'/views/templates/nav.html'"></div>
-    <main ng-view></main>
+    <main ng-view class="mainPadding"></main>
   </body>
 </html>

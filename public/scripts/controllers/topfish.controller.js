@@ -1,5 +1,5 @@
 //top fish contoller, controls login/out of app, displaying initial fish
-app.controller("TopFishCtrl", ["$firebaseAuth", "$http", "FishDataFactory", "AuthDataFactory", function($firebaseAuth, $http, DataFactory, AuthDataFactory) {
+app.controller("TopFishCtrl", ["$firebaseAuth", "$http", "FishDataFactory", "AuthDataFactory", function($firebaseAuth, $http, FishDataFactory, AuthDataFactory) {
 
   //set empty variables needed here
   var auth = $firebaseAuth();
@@ -38,16 +38,16 @@ function getFishies(){
   if(self.currentUser) {
     console.log("Firebase User", self.currentUser);
     self.currentUser.getToken().then(function(idToken){
-      DataFactory.setIdToken(idToken);
-      if(DataFactory.fishData() == undefined) {
-        DataFactory.updateFish().then(function(response) {
-          self.fishData = DataFactory.fishData();
+      FishDataFactory.setIdToken(idToken);
+      if(FishDataFactory.fishData() == undefined) {
+        FishDataFactory.updateFish().then(function(response) {
+          self.fishData = FishDataFactory.fishData();
           return self.fishData;
           console.log("Fish data from factory", self.fishData);
         });
       } else {
         console.log('Not logged in or not authorized.');
-        self.fishData = DataFactory.fishData();
+        self.fishData = FishDataFactory.fishData();
         return self.fishData;
       }
     }).catch(function(error) {
