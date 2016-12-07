@@ -33,11 +33,13 @@ app.controller("topFishCtrl", function($firebaseAuth, $http) {
   self.logIn = function(){
     auth.$signInWithPopup("google").then(function(firebaseUser) {
       console.log("Firebase Authenticated as: ", firebaseUser.user.displayName);
+      //set the current user as the returned firebaseUser
+      self.currentUser = firebaseUser.user;
       // get fish data
-      if(firebaseUser) {
-        console.log("Firebase User", firebaseUser);
+      if(self.currentUser) {
+        console.log("Firebase User", self.currentUser);
         // This is where we make our call to our server
-        firebaseUser.getToken().then(function(idToken){
+        self.currentUser.getToken().then(function(idToken){
           $http({
             method: 'GET',
             url: '/fishData',
@@ -60,11 +62,10 @@ app.controller("topFishCtrl", function($firebaseAuth, $http) {
 
 // This code runs whenever the user changes authentication states, or whenever the hell it wants in my case
 auth.$onAuthStateChanged(function(user) {
-  // if (user) {
-  //   user.getToken().then(function(data) {
-  //     console.log(data)
-  //   });
-  // }
+  if (user) {
+    user.getToken().then(function(data) {
+    });
+  }
 });
 
 // This code runs when the user logs out
