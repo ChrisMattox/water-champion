@@ -5,9 +5,8 @@ var Schema = mongoose.Schema;
 var fishSchema = new Schema({
 
     email: { type: String, required: true},
-    breed: { type: String, required: true},
+    species: { type: String, required: true},
     length: { type: Number, required: true},
-    width: { type: Number, required: true},
     girth: { type: Number, required: true},
     weight: { type: Number, required: true},
     location: { type: String, required: true},

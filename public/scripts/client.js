@@ -15,16 +15,10 @@ app.config(['$routeProvider', function($routeProvider) {
   })
   .when('/viewfish', {
     templateUrl: '/views/templates/viewfish.html',
-    controller: 'viewFishCtrl',
+    controller: 'ViewFishCtrl',
     controllerAs: 'vfc'
   })
   .otherwise({
     redirectTo: 'topfish'
   });
 }]); //close app.config
-
-
-app.controller("viewFishCtrl", ["$http", function($firebaseAuth, $http) {
-    var self = this;
-
-}]);

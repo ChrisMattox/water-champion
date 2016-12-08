@@ -1,1 +1,25 @@
-<h1>view fish</h1>
+<h1>View Fish</h1>
+<table class="table table-hover table-inverse">
+  <thead>
+    <tr>
+      <th>Species</th>
+      <th>Length</th>
+      <th>Weight</th>
+      <th>Girth</th>
+      <th>Location</th>
+      <th>Gear</th>
+      <th>Weather</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="fish in vfc.fishData">
+      <td>{{fish.species}}</td>
+      <td>{{fish.length}} inches</td>
+      <td>{{fish.weight}} pounds</td>
+      <td>{{fish.girth}} inches</td>
+      <td>{{fish.location}}</td>
+      <td>{{fish.gear}}</td>
+      <td>{{fish.weather}}</td>
+    </tr>
+  </tbody>
+</table>
