@@ -1,6 +1,6 @@
 <h1>Add Fish</h1>
 <div id="fishForm">
-  <form id="fishForm" ng-submit="afc.addFish()">
+  <form id="fishForm" ng-submit="afc.addFish(newFish)">
     <label for="fishBreed">Breed: </label>
     <input type="text" id="fishBreed" name="fishBreed" ng-model="afc.newFish.breed"/><br>
 
@@ -14,7 +14,7 @@
     <input type="number" id="fishGirth" name="fishGirth" ng-model="afc.newFish.girth"/><br>
 
     <label for="fishLocation">Location Caught: </label>
-    <input type="text" id="fishGirth" name="fishGirth" ng-model="afc.newFish.girth"/><br>
+    <input type="text" id="fishGirth" name="fishGirth" ng-model="afc.newFish.location"/><br>
 
     <label for="fishGear">Gear Used: </label>
     <input type="text" id="fishGear" name="fishGear" ng-model="afc.newFish.gear"/><br>
@@ -22,6 +22,6 @@
     <label for="fishWeather">Weather Conditions: </label>
     <input type="text" id="fishWeather" name="fishWeather" ng-model="afc.newFish.weather"/><br>
 
-    <input type="submit" value="Submit New Fish" ng-click="afc.addFish(newFish)"/>
+    <input type="submit" value="Submit New Fish"/>
   </form>
 </div>

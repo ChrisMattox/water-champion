@@ -14,5 +14,7 @@
 
 **Current Questions**
 
-- Do I need this factory? What private functions need to be in factory?
-- Why doesn't my data stay when I switch views?
+- trying to get a frankenstein post request to work
+- i think my addfish controller is working correctly
+- set the email within the form w/o input
+- my fish-data route post looks a bit.. off
