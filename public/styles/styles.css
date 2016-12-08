@@ -6,3 +6,8 @@
 .mainPadding {
   padding: 20px;
 }
+
+.topFish {
+  background-color: magenta;
+  border: 10px solid white;
+}

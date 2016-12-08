@@ -23,7 +23,6 @@ var tokenDecoder = function(req, res, next){
       res.send(403);
     });
   } else {
-    console.log("No Token idiot");
     res.sendStatus(403);
   }
 

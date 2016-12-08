@@ -6,6 +6,7 @@ app.controller("TopFishCtrl", ["$firebaseAuth", "$http", "FishDataFactory", "Aut
   var self = this;
   self.currentUser = null;
   self.fishData = {};
+  self.fishLimit = 3;
 
   getFishies();
 
@@ -30,7 +31,7 @@ app.controller("TopFishCtrl", ["$firebaseAuth", "$http", "FishDataFactory", "Aut
   self.logOut = function(){
     auth.$signOut().then(function(){
       self.currentUser = {};
-      AuthDataFactory.getCurrentUser(self.currentUser);
+      AuthDataFactory.setCurrentUser(null);
       self.fishData = {};
       console.log('Logging the user out!');
     });
@@ -40,7 +41,6 @@ app.controller("TopFishCtrl", ["$firebaseAuth", "$http", "FishDataFactory", "Aut
 function getFishies(){
   self.currentUser = AuthDataFactory.getCurrentUser();
   if(self.currentUser) {
-    console.log("Firebase User", self.currentUser);
     self.currentUser.getToken().then(function(idToken){
       FishDataFactory.setIdToken(idToken);
       if(FishDataFactory.fishData() == undefined) {

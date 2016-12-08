@@ -1,27 +1,48 @@
 <button ng-click="tfc.logIn()">Log In</button>
 <button ng-click="tfc.logOut()">Log Out</button>
-<h1>Top Fish</h1>
-<table class="table table-hover table-inverse">
-  <thead>
-    <tr>
-      <th>Species</th>
-      <th>Length</th>
-      <th>Weight</th>
-      <th>Girth</th>
-      <th>Location</th>
-      <th>Gear</th>
-      <th>Weather</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr ng-repeat="fish in tfc.fishData">
-      <td>{{fish.species}}</td>
-      <td>{{fish.length}} inches</td>
-      <td>{{fish.weight}} pounds</td>
-      <td>{{fish.girth}} inches</td>
-      <td>{{fish.location}}</td>
-      <td>{{fish.gear}}</td>
-      <td>{{fish.weather}}</td>
-    </tr>
-  </tbody>
-</table>
+<div ng-if="tfc.fishData.length === 0">Log in to see your fish.</div>
+<div ng-if="tfc.fishData.length > 0">
+  <h1>Top Fish for {{tfc.currentUser.displayName}}</h1>
+
+<div class="row">
+  <div ng-repeat="fish in tfc.fishData | filter: fish.species='bass'">
+    <div class="col-sm-4 topFish" class="topFish">
+      <h3>BASS</h3>
+      <p>Length: {{fish.fishLength}} inches</p>
+      <p>Weight: {{fish.weight}} pounds</p>
+      <p>Girth: {{fish.girth}} inches</p>
+      <p>Location: {{fish.location}}</p>
+      <p>Gear: {{fish.gear}}</p>
+      <p>Weather: {{fish.weather}}</p>
+    </div>
+  </div>
+</div>
+
+  <div class="row">
+  <div ng-repeat="fish in tfc.fishData | filter: fish.species='perch' | limitTo: 'tfc.fishLimit' | orderBy: '-fishLength'">
+    <div class="col-sm-4 topFish" class="topFish">
+      <h3>PERCH</h3>
+      <p>Length: {{fish.fishLength}} inches</p>
+      <p>Weight: {{fish.weight}} pounds</p>
+      <p>Girth: {{fish.girth}} inches</p>
+      <p>Location: {{fish.location}}</p>
+      <p>Gear: {{fish.gear}}</p>
+      <p>Weather: {{fish.weather}}</p>
+    </div>
+  </div>
+</div>
+
+  <div class="row">
+  <div ng-repeat="fish in tfc.fishData | filter: fish.species='walleye'">
+    <div class="col-sm-4 topFish">
+      <h3>MUSKIE</h3>
+      <p>Length: {{fish.fishLength}} inches</p>
+      <p>Weight: {{fish.weight}} pounds</p>
+      <p>Girth: {{fish.girth}} inches</p>
+      <p>Location: {{fish.location}}</p>
+      <p>Gear: {{fish.gear}}</p>
+      <p>Weather: {{fish.weather}}</p>
+    </div>
+  </div>
+  </div>
+</div>
