@@ -20,8 +20,16 @@ app.factory('FishDataFactory', ["$http", function($http) {
   }
 
   function postFish(newFish){
-    var promise = $http.post('/fishData', newFish)
-    .then(function(response){
+    console.log("We in dat factory");
+    console.log(newFish);
+    var promise = $http({
+      method: 'POST',
+      url: '/fishData',
+      data: newFish,
+      headers: {
+        id_token: idToken
+      }
+    }).then(function(response){
       console.log("Fish Factory Add a Fish res", response);
       return getFishData();
     },

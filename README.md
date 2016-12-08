@@ -6,15 +6,15 @@
 - [x]display info on Top Fish view
 - [x]set up datafactory to pass around fish
 - [x]set up ANOTHER factory to pass around users
-- [x1/2]set up add fish form, then post request
+- [x]set up add fish form, then post request
+- []clean up database
 - []set up view fish controller
-- []post request from client to server
-- []set up view fish
-
+- []style this weekend, make water champion logo
+- []figure out angular sorting for top views
 
 **Current Questions**
 
-- trying to get a frankenstein post request to work
-- i think my addfish controller is working correctly
-- set the email within the form w/o input
-- my fish-data route post looks a bit.. off
+- Sorting main view with angular by top fish, length is our factor
+
+**Things to Remember**
+- Always pass the token on your requests.

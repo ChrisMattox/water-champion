@@ -49,7 +49,6 @@ function getFishies(){
           return self.fishData;
         });
       } else {
-        console.log('Not logged in or not authorized.');
         self.fishData = FishDataFactory.fishData();
         return self.fishData;
       }
