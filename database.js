@@ -12,3 +12,9 @@ db.fish.insert(
     {breed: "Walleye", length: 15, weight: 5, girth: 2, location: "Woman Lake", gear: "Lindy Rig", weather: "Cold and Cloudy", email: 'metroplex02@gmail.com'}
   ]
 );
+
+db.fish.insert(
+  [
+    {breed: "Muskie", length: 15, weight: 5, girth: 2, location: "Woman Lake", gear: "Lindy Rig", weather: "Cold and Cloudy", email: 'metroplex02@gmail.com'}
+  ]
+);

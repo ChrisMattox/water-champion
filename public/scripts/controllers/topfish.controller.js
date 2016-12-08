@@ -14,7 +14,6 @@ app.controller("TopFishCtrl", ["$firebaseAuth", "$http", "FishDataFactory", "Aut
       console.log("Firebase authenticaed in controller as ", firebaseUser.user.displayName);
       self.currentUser = firebaseUser.user;
       AuthDataFactory.setCurrentUser(self.currentUser);
-      console.log(AuthDataFactory.getCurrentUser());
       getFishies();
     });
   };
@@ -31,6 +30,7 @@ app.controller("TopFishCtrl", ["$firebaseAuth", "$http", "FishDataFactory", "Aut
   self.logOut = function(){
     auth.$signOut().then(function(){
       self.currentUser = {};
+      AuthDataFactory.getCurrentUser(self.currentUser);
       self.fishData = {};
       console.log('Logging the user out!');
     });
@@ -47,7 +47,6 @@ function getFishies(){
         FishDataFactory.updateFish().then(function(response) {
           self.fishData = FishDataFactory.fishData();
           return self.fishData;
-          console.log("Fish data from factory", self.fishData);
         });
       } else {
         console.log('Not logged in or not authorized.');

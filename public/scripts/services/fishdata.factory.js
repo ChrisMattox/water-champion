@@ -19,20 +19,37 @@ app.factory('FishDataFactory', ["$http", function($http) {
     return promise;
   }
 
-  var fishApi = {
-    fishData: function(){
-      //return our fish data stored here to the controller
-      return fishData;
-    },
-    setIdToken: function(newIdToken){
-      idToken = newIdToken;
-      return;
-    },
-    updateFish: function(){
-      return getFishData();
-    }
-  };
+//   function postFish(newFish){
+//     var promise = $http.post('/fishData', newFish)
+//     .then(function(response){
+//       console.log("Fish Factory Add a Fish res", response);
+//       return getFishData();
+//     },
+//     function(response){
+//       console.log("ERROR post response: ", response.data);
+//     }
+//   });
+//
+//     return promise;
+// }
 
-  return fishApi;
+var fishApi = {
+  fishData: function(){
+    //return our fish data stored here to the controller
+    return fishData;
+  },
+  setIdToken: function(newIdToken){
+    idToken = newIdToken;
+    return;
+  },
+  updateFish: function(){
+    return getFishData();
+  },
+  addFish: function(newFish) {
+    return postFish(newFish);
+  }
+};
+
+return fishApi;
 
 }]);

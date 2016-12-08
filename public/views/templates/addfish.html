@@ -22,6 +22,6 @@
     <label for="fishWeather">Weather Conditions: </label>
     <input type="text" id="fishWeather" name="fishWeather" ng-model="afc.newFish.weather"/><br>
 
-    <input type="submit" value="Submit New Fish" />
+    <input type="submit" value="Submit New Fish" ng-click="afc.addFish(newFish)"/>
   </form>
 </div>
