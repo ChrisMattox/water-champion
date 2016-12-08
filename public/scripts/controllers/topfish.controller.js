@@ -6,12 +6,15 @@ app.controller("TopFishCtrl", ["$firebaseAuth", "$http", "FishDataFactory", "Aut
   var self = this;
   self.currentUser = null;
   self.fishData = {};
+
   getFishies();
 
   self.logIn = function(){
     auth.$signInWithPopup("google").then(function(firebaseUser){
       console.log("Firebase authenticaed in controller as ", firebaseUser.user.displayName);
       self.currentUser = firebaseUser.user;
+      AuthDataFactory.setCurrentUser(self.currentUser);
+      console.log(AuthDataFactory.getCurrentUser());
       getFishies();
     });
   };
@@ -35,6 +38,7 @@ app.controller("TopFishCtrl", ["$firebaseAuth", "$http", "FishDataFactory", "Aut
 
 
 function getFishies(){
+  self.currentUser = AuthDataFactory.getCurrentUser();
   if(self.currentUser) {
     console.log("Firebase User", self.currentUser);
     self.currentUser.getToken().then(function(idToken){

@@ -1,13 +1,19 @@
 app.factory('AuthDataFactory', ["$http", function($http) {
 
-  var currentUser = undefined;
+  var currentUser = null;
 
-  var publicApi = {
-    theCurrentUser: function(){
+
+
+  var authApi = {
+    setCurrentUser: function(theUser){
+      currentUser = theUser;
+      return;
+    },
+    getCurrentUser: function(){
       return currentUser;
     }
   }
 
-  return publicApi;
+  return authApi;
 
 }]);

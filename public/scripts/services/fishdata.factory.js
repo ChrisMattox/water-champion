@@ -19,7 +19,7 @@ app.factory('FishDataFactory', ["$http", function($http) {
     return promise;
   }
 
-  var publicApi = {
+  var fishApi = {
     fishData: function(){
       //return our fish data stored here to the controller
       return fishData;
@@ -33,6 +33,6 @@ app.factory('FishDataFactory', ["$http", function($http) {
     }
   };
 
-  return publicApi;
+  return fishApi;
 
 }]);
