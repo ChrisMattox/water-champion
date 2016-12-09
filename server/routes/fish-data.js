@@ -58,7 +58,17 @@ router.post("/", function(req, res){
   }
 });
 
+router.delete("/:_id", function(req, res){
+  Fish.findByIdAndRemove(
+    { _id: req.params._id },
+    function(err, data) {
+      if(err) {
+        console.log('Delete ERR: ', err);
+        res.sendStatus(500);
+      } else {
+        res.sendStatus(200);
+      }
+    });
+  });
 
-
-
-module.exports = router;
+  module.exports = router;

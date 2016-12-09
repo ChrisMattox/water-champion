@@ -39,6 +39,22 @@ app.factory('FishDataFactory', ["$http", function($http) {
     return promise;
   }
 
+  function removeFish(thisFish){
+    console.log("fish in da factory to delete", thisFish);
+    var promise = $http({
+      method: 'DELETE',
+      url: '/fishData/' + thisFish._id,
+      data: thisFish,
+      headers: {
+        id_token: idToken
+      }
+    }).then(function(response){
+      getFishData();
+
+    });
+    return promise;
+  }
+
   var fishApi = {
     fishData: function(){
       //return our fish data stored here to the controller
@@ -53,6 +69,9 @@ app.factory('FishDataFactory', ["$http", function($http) {
     },
     addNewFish: function(newFish) {
       return postFish(newFish);
+    },
+    deleteFishies: function(thisFish) {
+      return removeFish(thisFish);
     }
   };
 

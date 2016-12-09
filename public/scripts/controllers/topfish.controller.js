@@ -6,7 +6,6 @@ app.controller("TopFishCtrl", ["$firebaseAuth", "$http", "FishDataFactory", "Aut
   var self = this;
   self.currentUser = null;
   self.fishData = {};
-  self.fishLimit = 3;
 
   getFishies();
 
@@ -43,15 +42,15 @@ function getFishies(){
   if(self.currentUser) {
     self.currentUser.getToken().then(function(idToken){
       FishDataFactory.setIdToken(idToken);
-      if(FishDataFactory.fishData() == undefined) {
+      // if(FishDataFactory.fishData() == undefined) {
         FishDataFactory.updateFish().then(function(response) {
           self.fishData = FishDataFactory.fishData();
           return self.fishData;
         });
-      } else {
-        self.fishData = FishDataFactory.fishData();
-        return self.fishData;
-      }
+      // } else {
+      //   self.fishData = FishDataFactory.fishData();
+      //   return self.fishData;
+      // }
     }).catch(function(error) {
       console.log("Authentication failed: ", error);
     });

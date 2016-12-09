@@ -5,7 +5,7 @@
   <h1>Top Fish for {{tfc.currentUser.displayName}}</h1>
 
 <div class="row">
-  <div ng-repeat="fish in tfc.fishData | filter: fish.species='bass'">
+  <div ng-repeat="fish in tfc.fishData | filter: fish.species='bass' | orderBy: '-fishLength'">
     <div class="col-sm-4 topFish" class="topFish">
       <h3>BASS</h3>
       <p>Length: {{fish.fishLength}} inches</p>
@@ -19,7 +19,7 @@
 </div>
 
   <div class="row">
-  <div ng-repeat="fish in tfc.fishData | filter: fish.species='perch' | limitTo: 'tfc.fishLimit' | orderBy: '-fishLength'">
+  <div ng-repeat="fish in tfc.fishData | filter: fish.species='perch' | limitTo: '3' | orderBy: '-fishLength'">
     <div class="col-sm-4 topFish" class="topFish">
       <h3>PERCH</h3>
       <p>Length: {{fish.fishLength}} inches</p>
@@ -35,7 +35,7 @@
   <div class="row">
   <div ng-repeat="fish in tfc.fishData | filter: fish.species='walleye'">
     <div class="col-sm-4 topFish">
-      <h3>MUSKIE</h3>
+      <h3>WALLEYE</h3>
       <p>Length: {{fish.fishLength}} inches</p>
       <p>Weight: {{fish.weight}} pounds</p>
       <p>Girth: {{fish.girth}} inches</p>
