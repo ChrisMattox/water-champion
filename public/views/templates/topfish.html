@@ -1,11 +1,13 @@
 <button ng-click="tfc.logIn()">Log In</button>
 <button ng-click="tfc.logOut()">Log Out</button>
-<div ng-if="tfc.fishData.length === 0">Log in to see your fish.</div>
+<div ng-hide="tfc.fishData.length > 0"><p>Log in to see your fish.</p>  </div>
 <div ng-if="tfc.fishData.length > 0">
 
   <div class="whosFish">
     <h2>Top Fish for {{tfc.currentUser.displayName}}</h2>
   </div>
+
+  <div class="cheatFooter">
 
   <div class="row" id="topFishId">
     <div ng-repeat="fish in tfc.fishData | filter: fish.species='bass'  | limitTo: '3' | orderBy: '-fishLength'">

@@ -23,15 +23,17 @@ app.controller("TopFishCtrl", ["$firebaseAuth", "$http", "FishDataFactory", "Aut
     if (user) {
       user.getToken().then(function(data) {
       });
+    }else{
+      AuthDataFactory.setCurrentUser(undefined);
     }
   });
 
   // This code runs when the user logs out
   self.logOut = function(){
     auth.$signOut().then(function(){
-      AuthDataFactory.setCurrentUser(null);
       self.currentUser = null;
       self.fishData = {};
+      FishDataFactory.setIdToken(undefined);
       console.log('Logging the user out!', self.currentUser);
     });
   };

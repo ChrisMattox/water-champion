@@ -12,7 +12,6 @@ app.controller("ViewFishCtrl", ["$firebaseAuth", "$http", "FishDataFactory", "Au
         self.currentUser.getToken().then(function(idToken){
           FishDataFactory.setIdToken(idToken);
           // if(FishDataFactory.fishData() == undefined) {
-            console.log("HEY HEY HEY");
             FishDataFactory.updateFish().then(function(response) {
               self.fishData = FishDataFactory.fishData();
               return self.fishData;

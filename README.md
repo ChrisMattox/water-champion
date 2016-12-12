@@ -12,8 +12,7 @@
 - [x]figure out angular sorting for top views
 - [] Editable, searchable view table
 - [] style this weekend, make water champion logo, FIGURE OUT ACTUAL APP NAME
-- [] Get form to no longer submit after log out
-- [] Moving login to header
+- [x] Get form to no longer submit after log out
 - [] Form validation
 - [x] Dropdown for species submit
 
