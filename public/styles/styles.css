@@ -1,6 +1,31 @@
+#mainBody {
+background: rgba(19,19,19,1);
+background: -moz-linear-gradient(top, rgba(19,19,19,1) 0%, rgba(28,28,28,1) 13%, rgba(44,44,44,1) 46%, rgba(71,71,71,1) 68%, rgba(102,102,102,1) 81%, rgba(89,89,89,1) 88%, rgba(76,76,76,1) 100%);
+background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(19,19,19,1)), color-stop(13%, rgba(28,28,28,1)), color-stop(46%, rgba(44,44,44,1)), color-stop(68%, rgba(71,71,71,1)), color-stop(81%, rgba(102,102,102,1)), color-stop(88%, rgba(89,89,89,1)), color-stop(100%, rgba(76,76,76,1)));
+background: -webkit-linear-gradient(top, rgba(19,19,19,1) 0%, rgba(28,28,28,1) 13%, rgba(44,44,44,1) 46%, rgba(71,71,71,1) 68%, rgba(102,102,102,1) 81%, rgba(89,89,89,1) 88%, rgba(76,76,76,1) 100%);
+background: -o-linear-gradient(top, rgba(19,19,19,1) 0%, rgba(28,28,28,1) 13%, rgba(44,44,44,1) 46%, rgba(71,71,71,1) 68%, rgba(102,102,102,1) 81%, rgba(89,89,89,1) 88%, rgba(76,76,76,1) 100%);
+background: -ms-linear-gradient(top, rgba(19,19,19,1) 0%, rgba(28,28,28,1) 13%, rgba(44,44,44,1) 46%, rgba(71,71,71,1) 68%, rgba(102,102,102,1) 81%, rgba(89,89,89,1) 88%, rgba(76,76,76,1) 100%);
+background: linear-gradient(to bottom, rgba(19,19,19,1) 0%, rgba(28,28,28,1) 13%, rgba(44,44,44,1) 46%, rgba(71,71,71,1) 68%, rgba(102,102,102,1) 81%, rgba(89,89,89,1) 88%, rgba(76,76,76,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#131313', endColorstr='#4c4c4c', GradientType=0 );
+height: 120vh;
+}
+
+h1 {
+  color: lightgreen;
+  font-family: 'Fjalla One', sans-serif;
+  margin-left: 30px;
+  font-size: 50px;
+}
+
 .headerthing {
   color: white;
+  /*background-image: url("../assets/images/lake.png");*/
   background-color: black;
+}
+
+.whosFish {
+  color: white;
+  font-family: 'Fjalla One', sans-serif;
 }
 
 .mainPadding {
@@ -8,6 +33,234 @@
 }
 
 .topFish {
-  background-color: magenta;
-  border: 10px solid white;
+  background-color: lightblue;
+  -webkit-box-shadow: 4px 4px 21px -4px rgba(0,0,0,0.65);
+  -moz-box-shadow: 4px 4px 21px -4px rgba(0,0,0,0.65);
+  box-shadow: 4px 4px 21px -4px rgba(0,0,0,0.65);
+  margin: 10px;
+  width: 31vw;
+}
+
+.topFishSpecies {
+  border-bottom: 1px dotted white;
+}
+
+.navBar {
+  background-color: black;
+  margin-top: -10px;
+  border-bottom: 1px solid grey;
+}
+
+
+h3 {
+  font-family: 'Fjalla One', sans-serif;
+}
+
+p {
+  font-family: 'Fjalla One', sans-serif;
+  font-family: 'Hind', sans-serif;
+}
+
+.topFish {
+
+    animation-name: dropHeader;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-out;
+    animation-duration: 0.6s;
+}
+.topFish ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.topFish ul li{
+    display: inline-block;
+    margin-right: 20px
+}
+
+@keyframes dropHeader {
+    0% {
+        transform: translateY(50%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+}
+
+@keyframes shake {
+	0% { transform: translate(0px); opacity: 0;}
+	17% { transform: translate(10px); }
+	34% { transform: translate(-10px); }
+	51% { transform: translate(6px); }
+	68% { transform: translate(-6px); }
+	85% { transform: translate(3px); }
+	100% { transform: translate(0px); opacity: 1;}
+}
+
+/*@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,600,400italic);
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  -o-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}*/
+
+.mainFishForm {
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
+  font-weight: 100;
+  font-size: 12px;
+  line-height: 30px;
+  color: #777;
+}
+
+.mainFishForm {
+  max-width: 550px;
+  width: 100%;
+  margin: 0 auto;
+  /*position: relative;*/
+}
+
+#fishForm input[type="text"],
+#fishForm input[type="email"],
+#fishForm input[type="tel"],
+#fishForm input[type="url"],
+#fishForm textarea,
+#fishForm button[type="submit"] {
+  font: 400 12px/16px "Roboto", Helvetica, Arial, sans-serif;
+}
+
+#fishForm {
+  background: #F9F9F9;
+  padding: 25px;
+  margin: 10px 0;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+#fishForm h3 {
+  display: block;
+  font-size: 30px;
+  font-weight: 300;
+  margin-bottom: 10px;
+}
+
+#fishForm h4 {
+  margin: 5px 0 15px;
+  display: block;
+  font-size: 13px;
+  font-weight: 400;
+}
+
+fieldset {
+  border: medium none !important;
+  margin: 0 0 10px;
+  min-width: 100%;
+  padding: 0;
+  width: 100%;
+}
+
+#fishForm input[type="text"],
+#fishForm input[type="email"],
+#fishForm input[type="tel"],
+#fishForm input[type="url"],
+#fishForm textarea {
+  width: 100%;
+  border: 1px solid #ccc;
+  background: #FFF;
+  margin: 0 0 5px;
+  padding: 10px;
+}
+
+#fishForm input[type="text"]:hover,
+#fishForm input[type="email"]:hover,
+#fishForm input[type="tel"]:hover,
+#fishForm input[type="url"]:hover,
+#fishForm textarea:hover {
+  -webkit-transition: border-color 0.3s ease-in-out;
+  -moz-transition: border-color 0.3s ease-in-out;
+  transition: border-color 0.3s ease-in-out;
+  border: 1px solid #aaa;
+}
+
+#fishForm textarea {
+  height: 100px;
+  max-width: 100%;
+  resize: none;
+}
+
+#fishForm button[type="submit"] {
+  cursor: pointer;
+  width: 100%;
+  border: none;
+  background: #4CAF50;
+  color: #FFF;
+  margin: 0 0 5px;
+  padding: 10px;
+  font-size: 15px;
+}
+
+#fishForm button[type="submit"]:hover {
+  background: #43A047;
+  -webkit-transition: background 0.3s ease-in-out;
+  -moz-transition: background 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
+}
+
+#fishForm button[type="submit"]:active {
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.copyright {
+  text-align: center;
+}
+
+#fishForm input:focus,
+#fishForm textarea:focus {
+  outline: 0;
+  border: 1px solid #aaa;
+}
+
+.footer-distributed {
+  padding: 10px;
+  color: white;
+}
+
+.dropForm {
+
+    animation-name: dropForm;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-out;
+    animation-duration: 0.6s;
+}
+
+@keyframes dropForm {
+    0% {
+        transform: translateY(50%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+}
+
+#tableId{
+  background-color: white;
+}
+
+/*#topFishId:hover  {
+  background-color: yellow;
+}*/
+
+.footer-distributed {
+
 }

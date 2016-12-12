@@ -1,5 +1,7 @@
-<h1>View Fish</h1>
-<table class="table table-hover table-inverse">
+<div class="whosFish">
+<h3>View Fish</h3>
+</div>
+<table class="table table-hover table-inverse" id="tableId" ng-if="vfc.fishData.length > 0">
   <thead>
     <tr>
       <th>Species</th>
@@ -20,7 +22,7 @@
       <td>{{fish.location}}</td>
       <td>{{fish.gear}}</td>
       <td>{{fish.weather}}</td>
-      <td><button class = "btn btn-danger" ng-click="vfc.deleteFish(fish)">DELETE</button></td>
+      <td><button class = "btn btn-danger" ng-click="vfc.deleteFish(fish)">Release</button></td>
     </tr>
   </tbody>
 </table>

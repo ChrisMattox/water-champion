@@ -25,12 +25,22 @@
     <script type="text/javascript" src="scripts/controllers/topfish.controller.js"></script>
     <script type="text/javascript" src="scripts/controllers/addfish.controller.js"></script>
     <script type="text/javascript" src="scripts/controllers/viewfish.controller.js"></script>
+    <script type="text/javascript" src="scripts/controllers/topfish.controller.js"></script>
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css?family=Fjalla+One" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fjalla+One|Hind" rel="stylesheet">
+
   </head>
-  <body ng-app="waterChampionApp">
+  <body ng-app="waterChampionApp" id="mainBody">
+
     <header ng-include="'/views/templates/header.html'" class="headerthing"></header>
+
     <div ng-include="'/views/templates/nav.html'"></div>
+
     <main ng-view class="mainPadding"></main>
+
+    <footer ng-include="'/views/templates/footer.html'"></footer>
+
   </body>
 </html>

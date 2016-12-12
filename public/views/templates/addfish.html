@@ -1,16 +1,29 @@
-<h1>Add Fish</h1>
-<div id="fishForm">
-  <form id="fishForm" ng-submit="afc.addFish()">
-    <label for="fishSpecies">Species: </label>
-    <input type="text" id="fishSpecies" name="fishSpecies" ng-model="afc.newFish.species"/><br>
 
-    <label for="fishLength">Fish Length: </label>
+<div class="mainFishForm">
+  <fieldset class="dropForm">
+  <form id="fishForm" ng-submit="afc.addFish()">
+    <!-- <label for="fishSpecies" class="fs-title">Species: </label>
+    <input type="text" id="fishSpecies" name="fishSpecies" ng-model="afc.newFish.species"/><br> -->
+    <h3>Add Your Fish</h3>
+    <label for="fishSpecies" class="select" name="fishSpecies">Select a Species</label>
+    <select for="fishSpecies" class="weee" id="fishSpecies" name="fishSpecies" ng-model="afc.newFish.species">
+      <option value="Bass">Bass</option>
+      <option value="Walleye">Walleye</option>
+      <option value="Muskie">Muskie</option>
+      <option value="Pike">Pike</option>
+      <option value="Crappie">Crappie</option>
+      <option value="Perch">Perch</option>
+      <option value="RockBass">Rock Bass</option>
+    </select>
+    <br>
+
+    <label for="fishLength">Fish Length: </label><br>
     <input type="number" id="fishLength" name="fishLength" ng-model="afc.newFish.fishLength"/><br>
 
-    <label for="fishWeight">Fish Weight: </label>
+    <label for="fishWeight">Fish Weight: </label><br>
     <input type="number" id="fishWeight" name="fishWeight" ng-model="afc.newFish.weight"/><br>
 
-    <label for="fishGirth">Fish Girth: </label>
+    <label for="fishGirth">Fish Girth: </label><br>
     <input type="number" id="fishGirth" name="fishGirth" ng-model="afc.newFish.girth"/><br>
 
     <label for="fishLocation">Location Caught: </label>
@@ -22,6 +35,7 @@
     <label for="fishWeather">Weather Conditions: </label>
     <input type="text" id="fishWeather" name="fishWeather" ng-model="afc.newFish.weather"/><br>
 
-    <input type="submit" value="Submit New Fish"/>
+    <input type="submit" value="Submit New Fish" class="action-button"/>
   </form>
+</fieldset>
 </div>

@@ -2,47 +2,107 @@
 <button ng-click="tfc.logOut()">Log Out</button>
 <div ng-if="tfc.fishData.length === 0">Log in to see your fish.</div>
 <div ng-if="tfc.fishData.length > 0">
-  <h1>Top Fish for {{tfc.currentUser.displayName}}</h1>
 
-<div class="row">
-  <div ng-repeat="fish in tfc.fishData | filter: fish.species='bass' | orderBy: '-fishLength'">
-    <div class="col-sm-4 topFish" class="topFish">
-      <h3>BASS</h3>
-      <p>Length: {{fish.fishLength}} inches</p>
-      <p>Weight: {{fish.weight}} pounds</p>
-      <p>Girth: {{fish.girth}} inches</p>
-      <p>Location: {{fish.location}}</p>
-      <p>Gear: {{fish.gear}}</p>
-      <p>Weather: {{fish.weather}}</p>
+  <div class="whosFish">
+    <h2>Top Fish for {{tfc.currentUser.displayName}}</h2>
+  </div>
+
+  <div class="row" id="topFishId">
+    <div ng-repeat="fish in tfc.fishData | filter: fish.species='bass'  | limitTo: '3' | orderBy: '-fishLength'">
+      <div class="col-sm-4 topFish" class="topFish">
+        <h3 class="topFishSpecies">Bass</h3>
+        <p>Length: {{fish.fishLength}} inches</p>
+        <p>Weight: {{fish.weight}} pounds</p>
+        <p>Girth: {{fish.girth}} inches</p>
+        <p>Location: {{fish.location}}</p>
+        <p>Gear: {{fish.gear}}</p>
+        <p>Weather: {{fish.weather}}</p>
+      </div>
     </div>
   </div>
-</div>
 
-  <div class="row">
-  <div ng-repeat="fish in tfc.fishData | filter: fish.species='perch' | limitTo: '3' | orderBy: '-fishLength'">
-    <div class="col-sm-4 topFish" class="topFish">
-      <h3>PERCH</h3>
-      <p>Length: {{fish.fishLength}} inches</p>
-      <p>Weight: {{fish.weight}} pounds</p>
-      <p>Girth: {{fish.girth}} inches</p>
-      <p>Location: {{fish.location}}</p>
-      <p>Gear: {{fish.gear}}</p>
-      <p>Weather: {{fish.weather}}</p>
+  <div class="row" id="topFishId">
+    <div ng-repeat="fish in tfc.fishData | limitTo: '3' | orderBy: '-fishLength'| filter: fish.species='walleye'">
+      <div class="col-sm-4 topFish">
+        <h3 class="topFishSpecies">Walleye</h3>
+        <p>Length: {{fish.fishLength}} inches</p>
+        <p>Weight: {{fish.weight}} pounds</p>
+        <p>Girth: {{fish.girth}} inches</p>
+        <p>Location: {{fish.location}}</p>
+        <p>Gear: {{fish.gear}}</p>
+        <p>Weather: {{fish.weather}}</p>
+      </div>
     </div>
   </div>
-</div>
 
-  <div class="row">
-  <div ng-repeat="fish in tfc.fishData | filter: fish.species='walleye'">
-    <div class="col-sm-4 topFish">
-      <h3>WALLEYE</h3>
-      <p>Length: {{fish.fishLength}} inches</p>
-      <p>Weight: {{fish.weight}} pounds</p>
-      <p>Girth: {{fish.girth}} inches</p>
-      <p>Location: {{fish.location}}</p>
-      <p>Gear: {{fish.gear}}</p>
-      <p>Weather: {{fish.weather}}</p>
+  <div class="row" id="topFishId">
+    <div ng-repeat="fish in tfc.fishData | filter: fish.species='muskie' | limitTo: '3' | orderBy: '-fishLength'">
+      <div class="col-sm-4 topFish" class="topFish">
+        <h3 class="topFishSpecies">Muskie</h3>
+        <p>Length: {{fish.fishLength}} inches</p>
+        <p>Weight: {{fish.weight}} pounds</p>
+        <p>Girth: {{fish.girth}} inches</p>
+        <p>Location: {{fish.location}}</p>
+        <p>Gear: {{fish.gear}}</p>
+        <p>Weather: {{fish.weather}}</p>
+      </div>
     </div>
   </div>
+
+  <div class="row" id="topFishId">
+    <div ng-repeat="fish in tfc.fishData | filter: fish.species='pike' | limitTo: '3' | orderBy: '-fishLength'">
+      <div class="col-sm-4 topFish" class="topFish">
+        <h3 class="topFishSpecies">Pike</h3>
+        <p>Length: {{fish.fishLength}} inches</p>
+        <p>Weight: {{fish.weight}} pounds</p>
+        <p>Girth: {{fish.girth}} inches</p>
+        <p>Location: {{fish.location}}</p>
+        <p>Gear: {{fish.gear}}</p>
+        <p>Weather: {{fish.weather}}</p>
+      </div>
+    </div>
   </div>
+
+  <div class="row" id="topFishId" >
+    <div ng-repeat="fish in tfc.fishData | filter: fish.species='crappie' | limitTo: '3' | orderBy: '-fishLength'">
+      <div class="col-sm-4 topFish" class="topFish">
+        <h3 class="topFishSpecies">Crappie</h3>
+        <p>Length: {{fish.fishLength}} inches</p>
+        <p>Weight: {{fish.weight}} pounds</p>
+        <p>Girth: {{fish.girth}} inches</p>
+        <p>Location: {{fish.location}}</p>
+        <p>Gear: {{fish.gear}}</p>
+        <p>Weather: {{fish.weather}}</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="row" id="topFishId">
+    <div ng-repeat="fish in tfc.fishData | filter: fish.species='perch' | limitTo: '3' | orderBy: '-fishLength'">
+      <div class="col-sm-4 topFish" class="topFish">
+        <h3 class="topFishSpecies">Perch</h3>
+        <p>Length: {{fish.fishLength}} inches</p>
+        <p>Weight: {{fish.weight}} pounds</p>
+        <p>Girth: {{fish.girth}} inches</p>
+        <p>Location: {{fish.location}}</p>
+        <p>Gear: {{fish.gear}}</p>
+        <p>Weather: {{fish.weather}}</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="row" id="topFishId">
+    <div ng-repeat="fish in tfc.fishData | filter: fish.species='rockbass' | limitTo: '3' | orderBy: '-fishLength'">
+      <div class="col-sm-4 topFish" class="topFish">
+        <h3 class="topFishSpecies">Rock Bass</h3>
+        <p>Length: {{fish.fishLength}} inches</p>
+        <p>Weight: {{fish.weight}} pounds</p>
+        <p>Girth: {{fish.girth}} inches</p>
+        <p>Location: {{fish.location}}</p>
+        <p>Gear: {{fish.gear}}</p>
+        <p>Weather: {{fish.weather}}</p>
+      </div>
+    </div>
+  </div>
+
 </div>

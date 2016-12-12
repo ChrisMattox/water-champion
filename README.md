@@ -10,12 +10,13 @@
 - [x]clean up database
 - [x]set up view fish controller
 - [x]figure out angular sorting for top views
-- [] Editable view table
-- []style this weekend, make water champion logo
+- [] Editable, searchable view table
+- [] style this weekend, make water champion logo, FIGURE OUT ACTUAL APP NAME
 - [] Get form to no longer submit after log out
 - [] Moving login to header
 - [] Form validation
-- [] Dropdown for species
+- [] Dropdown for species submit
+
 
 
 **Stretch Goals**
@@ -24,10 +25,11 @@
 - [] Research and begin getting photo uploads to work
 - [] Nabbing GPS data of stored photos with mongo
 - [] Admin page for creating users
+- [] Overall scoreboard of winners, regardless of login status
 
 **Current Questions**
 
-- Sorting main view with angular by top fish, length is our factor
+- angular modal options ng material
 
 **Things to Remember**
 - Always pass the token on your requests.

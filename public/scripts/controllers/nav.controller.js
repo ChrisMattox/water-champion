@@ -1,5 +1,7 @@
 //top fish contoller, controls login/out of app, displaying initial fish
-app.controller("TopFishCtrl", ["$firebaseAuth", "$http", "FishDataFactory", "AuthDataFactory", function($firebaseAuth, $http, FishDataFactory, AuthDataFactory) {
+var app = angular.module("navApp", ["firebase", "ngRoute"]);
+
+app.controller("NavCtrl", ["$firebaseAuth", "$http", "FishDataFactory", "AuthDataFactory", function($firebaseAuth, $http, FishDataFactory, AuthDataFactory) {
 
   //set empty variables needed here
   var auth = $firebaseAuth();
@@ -32,6 +34,7 @@ app.controller("TopFishCtrl", ["$firebaseAuth", "$http", "FishDataFactory", "Aut
       AuthDataFactory.setCurrentUser(null);
       self.currentUser = null;
       self.fishData = {};
+      FishDataFactory.fishData() = null;
       console.log('Logging the user out!', self.currentUser);
     });
   };
