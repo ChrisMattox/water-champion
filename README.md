@@ -15,7 +15,7 @@
 - [] Get form to no longer submit after log out
 - [] Moving login to header
 - [] Form validation
-- [] Dropdown for species submit
+- [x] Dropdown for species submit
 
 
 

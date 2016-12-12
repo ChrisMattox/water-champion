@@ -8,11 +8,6 @@ app.config(['$routeProvider', function($routeProvider) {
     controller: 'TopFishCtrl',
     controllerAs: 'tfc'
   })
-  // .when('/nav', {
-  //   templateUrl: '/views/templates/nav.html',
-  //   controller: 'NavCtrl',
-  //   controllerAs: 'nc'
-  // })
   .when('/addfish', {
     templateUrl: '/views/templates/addfish.html',
     controller: 'AddFishCtrl',
