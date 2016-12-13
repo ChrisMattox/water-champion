@@ -39,3 +39,28 @@
   </form>
 </fieldset>
 </div>
+
+<div class="mainFishForm">
+  <div class="uploads">
+<!-- THROW IN REQUIRED AFTER COMPLETING -->
+<h1>This is a MEAN stack file upload example!</h1>
+ <form ng-submit="afc.submit()">
+   <legend>Upload a new file here:</legend>
+   <label for="name">Name:</label>
+   <input type="text" name="name" id="name" ng-model="afc.upload.name"/>
+   <br/>
+   <label for="file">File:</label>
+   <input type="file" name="file" id="file" ng-model="afc.upload.file" ngf-select ngf-max-size="25MB"/>
+   <br/>
+   <input type="submit" value="Submit"/>
+ </form>
+
+ <h2>All uploads are here:</h2>
+<ul>
+  <li ng-repeat="upload in afc.uploads">
+    <p>{{afc.upload.name}}</p>
+    <a ng-href='{{afc.upload.file.path + "/" + afc.upload.file.originalname}}'>{{upload.file.originalname}}</a>
+  </li>
+</ul>
+</div>
+</div>

@@ -1,8 +1,13 @@
 //route we want the fish to swim thru from database
 var express = require('express');
 var router = express.Router();
+var fs = require('fs');
+var path = require('path');
 var User = require('../models/user');
 var Fish = require('../models/fish');
+var Upload = require('../models/uploads');
+var multer = require('multer');
+var upload = multer({dest: 'uploads/'});
 
 //get request from login to recieve the user's fish data
 router.get("/", function(req, res){
@@ -55,6 +60,7 @@ router.post("/", function(req, res){
     });
   } else {
     res.sendStatus(403);
+    console.log("hitting THIS post on imgupload");
   }
 });
 
@@ -67,6 +73,57 @@ router.delete("/:_id", function(req, res){
         res.sendStatus(500);
       } else {
         res.sendStatus(200);
+      }
+    });
+  });
+
+  router.post('/test', upload.single('file'), function (req, res, next) {
+    console.log("post hit");
+    console.log("reqbody", req.body);
+    console.log("reqfile", req.file);
+    var newUpload = {
+      name: req.body.name,
+      created: Date.now(),
+      file: req.file
+    };
+    Upload.create(newUpload, function (err, next){
+      if (err) {
+        next(err);
+      } else {
+        res.send(newUpload);
+      }
+    });
+  });
+
+
+  /**
+  * Gets the list of all files from the database
+  */
+  router.get('/test', function (req, res, next) {
+    Upload.find({},  function (err, uploads) {
+      if (err) next(err);
+      else {
+        res.send(uploads);
+      }
+    });
+  });
+
+  /**
+  * Gets a file from the hard drive based on the unique ID and the filename
+  */
+  router.get('/:uuid/:filename', function (req, res, next) {
+    console.log(req.params);
+    Upload.findOne({
+      'file.filename': req.params.uuid,
+      'file.originalname': req.params.filename
+    }, function (err, upload) {
+      if (err) next(err);
+      else {
+        res.set({
+          "Content-Disposition": 'attachment; filename="' + upload.file.originalname + '"',
+          "Content-Type": upload.file.mimetype
+        });
+        fs.createReadStream(upload.file.path).pipe(res);
       }
     });
   });

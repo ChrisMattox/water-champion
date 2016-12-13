@@ -3,6 +3,7 @@ var express = require('express');
 var app = express();
 var path = require('path');
 var bodyParser = require('body-parser');
+var logger = require('morgan');
 var decoder = require('./modules/decoder');
 var mongoConnection = require('./modules/mongo-connection');
 var fishData = require('./routes/fish-data');
@@ -16,6 +17,7 @@ app.get('/', function(req, res){
 app.use(express.static('public'));
 
 //parse that data. descaling the fish
+app.use(logger('dev'));
 app.use(bodyParser.json());
 
 // Decodes the token in the request header and attaches the decoded token to req.decodedToken on the request.
@@ -25,6 +27,8 @@ app.use(decoder.token);
 
 // This is the route for your fishData. The request gets here after it has been authenticated.
 app.use("/fishData", fishData);
+app.use('/uploads', fishData);
+
 
 mongoConnection.connect();
 

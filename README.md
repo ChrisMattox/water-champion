@@ -10,11 +10,15 @@
 - [x]clean up database
 - [x]set up view fish controller
 - [x]figure out angular sorting for top views
-- [] Editable, searchable view table
+- [x] searchable view table
 - [] style this weekend, make water champion logo, FIGURE OUT ACTUAL APP NAME
 - [x] Get form to no longer submit after log out
 - [] Form validation
 - [x] Dropdown for species submit
+- [x] get uploads working
+- [] tie photos to user emails, get them displaying on the DOM by persisting them in a factory
+- [] google maps API
+- [] get location data off photo upload and into google maps
 
 
 

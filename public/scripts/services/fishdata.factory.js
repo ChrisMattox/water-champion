@@ -2,6 +2,7 @@ app.factory('FishDataFactory', ["$http", function($http) {
 
   var fishData = undefined;
   var idToken = undefined;
+  var picData = [];
 
   //get the data
   function getFishData(){
@@ -70,6 +71,13 @@ app.factory('FishDataFactory', ["$http", function($http) {
     },
     deleteFishies: function(thisFish) {
       return removeFish(thisFish);
+    },
+    picData: function(){
+      return picData;
+    },
+    setPicData: function(newPicData){
+      picData.push(newPicData);
+      return;
     }
   };
 

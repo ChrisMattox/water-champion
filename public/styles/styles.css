@@ -9,7 +9,7 @@
 }
 
 h1 {
-  color: lightgreen;
+  color: grey;
   font-family: 'Fjalla One', sans-serif;
   margin-left: 20px;
   font-size: 50px;
@@ -26,6 +26,10 @@ h2 {
   background-color: lightblue;
   padding: 20px;
   border-radius: 10px;
+}
+
+.uploads {
+  background-color: lightblue;
 }
 
 #logo {

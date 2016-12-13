@@ -1,4 +1,4 @@
-var app = angular.module("waterChampionApp", ["firebase", "ngRoute"]);
+var app = angular.module("waterChampionApp", ["firebase", "ngRoute","ngFileUpload"]);
 
 //setting up routes for angular controllers. stretch goal is to have only this
 app.config(['$routeProvider', function($routeProvider) {
