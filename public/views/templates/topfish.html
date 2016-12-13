@@ -1,6 +1,15 @@
-<button ng-click="tfc.logIn()">Log In</button>
-<button ng-click="tfc.logOut()">Log Out</button>
-<div ng-hide="tfc.fishData.length > 0"><p>Log in to see your fish.</p>  </div>
+<button ng-click="tfc.logIn()" id="loginButton">Log In</button>
+<button ng-click="tfc.logOut()" id="logOutButton">Log Out</button>
+<div ng-hide="tfc.fishData.length > 0" class="parable">
+
+
+<p>When the wind blows from the East, the fish bite the least.<br>
+  When the wind blows from the West, the fish bite the best.<br>
+  When the wind blows from the North, no fisherman ventures forth.<br>
+  When the wind blows from the South, it blows the hook into the fishes mouth.</p>
+
+</div>
+
 <div ng-if="tfc.fishData.length > 0">
 
   <div class="whosFish">

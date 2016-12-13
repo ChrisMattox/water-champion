@@ -1,16 +1,11 @@
 #mainBody {
-background: rgba(19,19,19,1);
-background: -moz-linear-gradient(top, rgba(19,19,19,1) 0%, rgba(28,28,28,1) 13%, rgba(44,44,44,1) 46%, rgba(71,71,71,1) 68%, rgba(102,102,102,1) 81%, rgba(89,89,89,1) 88%, rgba(76,76,76,1) 100%);
-background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(19,19,19,1)), color-stop(13%, rgba(28,28,28,1)), color-stop(46%, rgba(44,44,44,1)), color-stop(68%, rgba(71,71,71,1)), color-stop(81%, rgba(102,102,102,1)), color-stop(88%, rgba(89,89,89,1)), color-stop(100%, rgba(76,76,76,1)));
-background: -webkit-linear-gradient(top, rgba(19,19,19,1) 0%, rgba(28,28,28,1) 13%, rgba(44,44,44,1) 46%, rgba(71,71,71,1) 68%, rgba(102,102,102,1) 81%, rgba(89,89,89,1) 88%, rgba(76,76,76,1) 100%);
-background: -o-linear-gradient(top, rgba(19,19,19,1) 0%, rgba(28,28,28,1) 13%, rgba(44,44,44,1) 46%, rgba(71,71,71,1) 68%, rgba(102,102,102,1) 81%, rgba(89,89,89,1) 88%, rgba(76,76,76,1) 100%);
-background: -ms-linear-gradient(top, rgba(19,19,19,1) 0%, rgba(28,28,28,1) 13%, rgba(44,44,44,1) 46%, rgba(71,71,71,1) 68%, rgba(102,102,102,1) 81%, rgba(89,89,89,1) 88%, rgba(76,76,76,1) 100%);
-background: linear-gradient(to bottom, rgba(19,19,19,1) 0%, rgba(28,28,28,1) 13%, rgba(44,44,44,1) 46%, rgba(71,71,71,1) 68%, rgba(102,102,102,1) 81%, rgba(89,89,89,1) 88%, rgba(76,76,76,1) 100%);
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#131313', endColorstr='#4c4c4c', GradientType=0 );
--webkit-background-size: cover;
--moz-background-size: cover;
--o-background-size: cover;
-background-size: cover;
+  background:
+  radial-gradient(black 15%, transparent 16%) 0 0,
+  radial-gradient(black 15%, transparent 16%) 8px 8px,
+  radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 0 1px,
+  radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 8px 9px;
+  background-color:#282828;
+  background-size:16px 16px;
 }
 
 h1 {
@@ -22,6 +17,25 @@ h1 {
 
 h2 {
   font-family: 'Fjalla One', sans-serif;
+}
+
+.parable {
+  margin: 0 auto;
+  height: 300px;
+  width: 500px;
+  background-color: lightblue;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+#logo {
+  float: left;
+  margin-left: 20px;
+  margin-right: 30px;
+}
+
+button hover:#loginButton {
+  background-color: magenta;
 }
 
 .headerthing {
@@ -110,20 +124,6 @@ p {
 	100% { transform: translate(0px); opacity: 1;}
 }
 
-/*@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,600,400italic);
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -webkit-font-smoothing: antialiased;
-  -moz-font-smoothing: antialiased;
-  -o-font-smoothing: antialiased;
-  font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
-}*/
-
 .mainFishForm {
   font-family: "Roboto", Helvetica, Arial, sans-serif;
   font-weight: 100;
@@ -149,7 +149,7 @@ p {
 }
 
 #fishForm {
-  background: #F9F9F9;
+  background: lightblue;
   padding: 25px;
   margin: 10px 0;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
@@ -264,7 +264,8 @@ fieldset {
 }
 
 #tableId{
-  background-color: white;
+  background-color: lightblue;
+  padding: 10px;
 }
 
 /*#topFishId:hover  {
@@ -278,9 +279,10 @@ fieldset {
 .jumbotron {
     margin-bottom: 0px;
     background-image: url('../assets/images/lake.png');
-    background-position: 0% 25%;
+    background-position: 0% 99%;
     background-repeat: no-repeat;
     text-shadow: black 0.3em 0.3em 0.3em;
+    height: 200px;
 }
 
 .footer-distributed{
