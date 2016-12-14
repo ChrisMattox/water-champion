@@ -2,8 +2,6 @@
 <div class="mainFishForm">
   <fieldset class="dropForm">
   <form id="fishForm" ng-submit="afc.addFish()" onsubmit=" alert('Fish Submitted!');">
-    <!-- <label for="fishSpecies" class="fs-title">Species: </label>
-    <input type="text" id="fishSpecies" name="fishSpecies" ng-model="afc.newFish.species"/><br> -->
     <h3>Add Your Fish</h3>
     <label for="fishSpecies" class="select" name="fishSpecies">Select a Species</label>
     <select for="fishSpecies" class="weee" id="fishSpecies" name="fishSpecies" ng-model="afc.newFish.species">
@@ -43,9 +41,8 @@
 <div class="mainFishForm">
   <div class="uploads">
 <!-- THROW IN REQUIRED AFTER COMPLETING -->
-<h1>This is a MEAN stack file upload example!</h1>
+<h1>Add Fish Picture!</h1>
  <form ng-submit="afc.submit()">
-   <legend>Upload a new file here:</legend>
    <label for="name">Name:</label>
    <input type="text" name="name" id="name" ng-model="afc.upload.name"/>
    <br/>
@@ -56,11 +53,10 @@
  </form>
 
  <h2>All uploads are here:</h2>
-<ul>
-  <li ng-repeat="upload in afc.uploads">
-    <p>{{afc.upload.name}}</p>
-    <a ng-href='{{afc.upload.file.path + "/" + afc.upload.file.originalname}}'>{{upload.file.originalname}}</a>
-  </li>
+<ul ng-repeat="picture in afc.picData">
+  <li>
+  <img ng-src='uploads/{{picture.file.filename}}' class="fishPics">{{picture.file.originalname}}</a>
+</li>
 </ul>
 </div>
 </div>

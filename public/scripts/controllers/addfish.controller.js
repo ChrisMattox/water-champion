@@ -5,7 +5,7 @@ app.controller("AddFishCtrl", ["$firebaseAuth", "$http", "FishDataFactory", "Aut
   self.fishData = {};
   self.newFish = {};
   self.uploads = [];
-  self.picData = [];
+  self.picData = {};
   self.currentUser = null;
 
   getPics();
@@ -31,19 +31,12 @@ app.controller("AddFishCtrl", ["$firebaseAuth", "$http", "FishDataFactory", "Aut
             id_token: idToken
           }
         }).then(function (response) {
-          self.uploads.push(response.data);
-          FishDataFactory.setPicData(self.uploads);
-          self.picData = FishDataFactory.picData();
-          console.log("HEYYYOOO HOTDOG", self.picData);
+          getPics();
+          console.log(self.picData);
         });
       });
     }
   }
-
-  // $http.get('/uploads').then(function(response){
-  //   console.log(response.data);
-  //   this.uploads = response.data;
-  // });
 
   function getPics(){
     self.currentUser = AuthDataFactory.getCurrentUser();
@@ -57,7 +50,9 @@ app.controller("AddFishCtrl", ["$firebaseAuth", "$http", "FishDataFactory", "Aut
             id_token: idToken
           }
         }).then(function (response) {
-          console.log(response.data);
+          FishDataFactory.setPicData(response.data);
+          self.picData = FishDataFactory.picData();
+          console.log("Pic Data from factory", self.picData);
         });
       });
     }

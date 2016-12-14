@@ -1,4 +1,4 @@
-var app = angular.module("waterChampionApp", ["firebase", "ngRoute","ngFileUpload"]);
+var app = angular.module("waterChampionApp", ["firebase", "ngRoute","ngFileUpload", "ngMap"]);
 
 //setting up routes for angular controllers. stretch goal is to have only this
 app.config(['$routeProvider', function($routeProvider) {
@@ -17,6 +17,11 @@ app.config(['$routeProvider', function($routeProvider) {
     templateUrl: '/views/templates/viewfish.html',
     controller: 'ViewFishCtrl',
     controllerAs: 'vfc'
+  })
+  .when('/map', {
+    templateUrl: '/views/templates/map.html',
+    controller: 'MapCtrl',
+    controllerAs: 'mc'
   })
   .otherwise({
     redirectTo: 'topfish'

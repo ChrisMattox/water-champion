@@ -17,7 +17,7 @@
 - [x] Dropdown for species submit
 - [x] get uploads working
 - [] tie photos to user emails, get them displaying on the DOM by persisting them in a factory
-- [] google maps API
+- [x] google maps API
 - [] get location data off photo upload and into google maps
 
 

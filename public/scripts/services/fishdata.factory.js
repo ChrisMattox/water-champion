@@ -49,7 +49,6 @@ app.factory('FishDataFactory', ["$http", function($http) {
       }
     }).then(function(response){
       getFishData();
-
     });
     return promise;
   }
@@ -76,7 +75,7 @@ app.factory('FishDataFactory', ["$http", function($http) {
       return picData;
     },
     setPicData: function(newPicData){
-      picData.push(newPicData);
+      picData = newPicData;
       return;
     }
   };

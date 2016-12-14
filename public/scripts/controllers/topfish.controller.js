@@ -34,7 +34,6 @@ app.controller("TopFishCtrl", ["$firebaseAuth", "$http", "FishDataFactory", "Aut
       self.currentUser = null;
       self.fishData = {};
       FishDataFactory.setIdToken(undefined);
-      console.log('Logging the user out!', self.currentUser);
     });
   };
 

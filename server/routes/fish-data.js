@@ -7,7 +7,7 @@ var User = require('../models/user');
 var Fish = require('../models/fish');
 var Upload = require('../models/uploads');
 var multer = require('multer');
-var upload = multer({dest: 'uploads/'});
+var upload = multer({dest: 'public/uploads/'});
 
 //get request from login to recieve the user's fish data
 router.get("/", function(req, res){
