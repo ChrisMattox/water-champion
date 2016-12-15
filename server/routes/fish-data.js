@@ -41,27 +41,40 @@ router.get("/", function(req, res){
   });
 });
 
-//get request from login to recieve the user's fish data
-router.post("/", function(req, res){
+router.post('/test', upload.single('file'), function (req, res, next) {
+  console.log("post hit");
+  // console.log("reqbody", req.body);
+  // console.log("reqfile", req.file);
   var userEmail = req.decodedToken.email;
   var newFish = req.body;
-  console.log("We have a bite!", newFish);
-  // Check the user's level of permision based on their email
-  if(newFish != null) {
-    newFish.email = userEmail;
-    var fishToAdd = new Fish(newFish);
-    fishToAdd.save(function(err){
-      if(err){
-        console.log('There was an error inserting new fish, ', err);
-        res.sendStatus(500);
+  var newUpload = {
+    created: Date.now(),
+    file: req.file
+  };
+  Upload.create(newUpload, function (err, next){
+    if (err) {
+      next(err);
+    } else {
+      console.log("We have a bite!", newFish);
+      //
+      if(newFish != null) {
+        newFish.email = userEmail;
+        newFish.image = newUpload.file.filename
+        var fishToAdd = new Fish(newFish);
+        console.log("FishToAdd", fishToAdd);
+        fishToAdd.save(function(err){
+          if(err){
+            console.log('There was an error inserting new fish, ', err);
+            res.sendStatus(500);
+          } else {
+            res.sendStatus(201);
+          }
+        });
       } else {
-        res.sendStatus(201);
+        console.log("hitting THIS post on imgupload");
       }
-    });
-  } else {
-    res.sendStatus(403);
-    console.log("hitting THIS post on imgupload");
-  }
+    }
+  });
 });
 
 router.delete("/:_id", function(req, res){
@@ -75,57 +88,37 @@ router.delete("/:_id", function(req, res){
         res.sendStatus(200);
       }
     });
-  });
-
-  router.post('/test', upload.single('file'), function (req, res, next) {
-    console.log("post hit");
-    console.log("reqbody", req.body);
-    console.log("reqfile", req.file);
-    var newUpload = {
-      name: req.body.name,
-      created: Date.now(),
-      file: req.file
-    };
-    Upload.create(newUpload, function (err, next){
-      if (err) {
-        next(err);
-      } else {
-        res.send(newUpload);
-      }
-    });
-  });
-
-
+});
   /**
   * Gets the list of all files from the database
   */
-  router.get('/test', function (req, res, next) {
-    Upload.find({},  function (err, uploads) {
-      if (err) next(err);
+router.get('/test', function (req, res, next) {
+  Upload.find({},  function (err, uploads) {
+    if (err) next(err);
       else {
         res.send(uploads);
       }
-    });
   });
+});
 
   /**
   * Gets a file from the hard drive based on the unique ID and the filename
   */
-  router.get('/:uuid/:filename', function (req, res, next) {
-    console.log(req.params);
-    Upload.findOne({
-      'file.filename': req.params.uuid,
-      'file.originalname': req.params.filename
-    }, function (err, upload) {
-      if (err) next(err);
-      else {
-        res.set({
-          "Content-Disposition": 'attachment; filename="' + upload.file.originalname + '"',
-          "Content-Type": upload.file.mimetype
-        });
+router.get('/:uuid/:filename', function (req, res, next) {
+  console.log(req.params);
+  Upload.findOne({
+    'file.filename': req.params.uuid,
+    'file.originalname': req.params.filename
+  }, function (err, upload) {
+    if (err) next(err);
+    else {
+      res.set({
+        "Content-Disposition": 'attachment; filename="' + upload.file.originalname + '"',
+        "Content-Type": upload.file.mimetype
+      });
         fs.createReadStream(upload.file.path).pipe(res);
       }
     });
-  });
+});
 
-  module.exports = router;
+module.exports = router;

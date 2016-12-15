@@ -1,7 +1,7 @@
 
 <div class="mainFishForm">
   <fieldset class="dropForm">
-  <form id="fishForm" ng-submit="afc.addFish()" onsubmit=" alert('Fish Submitted!');">
+  <form id="fishForm" ng-submit="afc.submit(); " onsubmit=" alert('Fish Submitted!');">
     <h3>Add Your Fish</h3>
     <label for="fishSpecies" class="select" name="fishSpecies">Select a Species</label>
     <select for="fishSpecies" class="weee" id="fishSpecies" name="fishSpecies" ng-model="afc.newFish.species">
@@ -33,30 +33,10 @@
     <label for="fishWeather">Weather Conditions: </label>
     <input type="text" id="fishWeather" name="fishWeather" ng-model="afc.newFish.weather"/><br>
 
+    <label for="file">File:</label>
+    <input type="file" name="file" id="file" ng-model="afc.newFish.file" ngf-select ngf-max-size="25MB"/>
+
     <input type="submit" value="Submit New Fish" class="action-button"/>
   </form>
 </fieldset>
-</div>
-
-<div class="mainFishForm">
-  <div class="uploads">
-<!-- THROW IN REQUIRED AFTER COMPLETING -->
-<h1>Add Fish Picture!</h1>
- <form ng-submit="afc.submit()">
-   <label for="name">Name:</label>
-   <input type="text" name="name" id="name" ng-model="afc.upload.name"/>
-   <br/>
-   <label for="file">File:</label>
-   <input type="file" name="file" id="file" ng-model="afc.upload.file" ngf-select ngf-max-size="25MB"/>
-   <br/>
-   <input type="submit" value="Submit"/>
- </form>
-
- <h2>All uploads are here:</h2>
-<ul ng-repeat="picture in afc.picData">
-  <li>
-  <img ng-src='uploads/{{picture.file.filename}}' class="fishPics">{{picture.file.originalname}}</a>
-</li>
-</ul>
-</div>
 </div>

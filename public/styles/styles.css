@@ -20,8 +20,11 @@ h2 {
 }
 
 .fishPics {
-  height: 100px;
-  width: 100px;
+  height: 200px;
+  width: 200px;
+  position: absolute;
+  right: 5px;
+  bottom: 30px;
 }
 
 .mapSize {

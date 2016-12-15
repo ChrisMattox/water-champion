@@ -7,6 +7,7 @@ app.controller("TopFishCtrl", ["$firebaseAuth", "$http", "FishDataFactory", "Aut
   self.currentUser = null;
   self.fishData = {};
 
+
   getFishies();
 
   self.logIn = function(){

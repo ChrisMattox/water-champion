@@ -16,7 +16,7 @@
 - [] Form validation
 - [x] Dropdown for species submit
 - [x] get uploads working
-- [] tie photos to user emails, get them displaying on the DOM by persisting them in a factory
+- [x] tie photos to user emails, get them displaying on the DOM by persisting them in a factory
 - [x] google maps API
 - [] get location data off photo upload and into google maps
 
@@ -24,8 +24,8 @@
 
 **Stretch Goals**
 
-- [] Research and connect to Google Maps API, display in new view
-- [] Research and begin getting photo uploads to work
+- [x] Research and connect to Google Maps API, display in new view
+- [x] Research and begin getting photo uploads to work
 - [] Nabbing GPS data of stored photos with mongo
 - [] Admin page for creating users
 - [] Overall scoreboard of winners, regardless of login status

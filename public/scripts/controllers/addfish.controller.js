@@ -10,23 +10,15 @@ app.controller("AddFishCtrl", ["$firebaseAuth", "$http", "FishDataFactory", "Aut
 
   getPics();
 
-  self.addFish = function(){
-    FishDataFactory.addNewFish(self.newFish)
-    .then(function(response){
-      FishDataFactory.updateFish();
-      self.newFish = {};
-    })
-  }
-
   self.submit = function(){
     self.currentUser = AuthDataFactory.getCurrentUser();
     if(self.currentUser) {
       //promise and callback -- name for the function passing in
       self.currentUser.getToken().then(function(idToken){
         Upload.upload({
-          url: '/uploads/test',
+          url: '/fishData/test',
           method: 'POST',
-          data: self.upload,
+          data: self.newFish,
           headers: {
             id_token: idToken
           }
@@ -44,7 +36,7 @@ app.controller("AddFishCtrl", ["$firebaseAuth", "$http", "FishDataFactory", "Aut
       //promise and callback -- name for the function passing in
       self.currentUser.getToken().then(function(idToken){
         $http({
-          url: '/uploads/test',
+          url: '/fishData/test',
           method: 'GET',
           headers: {
             id_token: idToken

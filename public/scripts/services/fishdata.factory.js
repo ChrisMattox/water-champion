@@ -20,24 +20,6 @@ app.factory('FishDataFactory', ["$http", function($http) {
     return promise;
   }
 
-  function postFish(newFish){
-    var promise = $http({
-      method: 'POST',
-      url: '/fishData',
-      data: newFish,
-      headers: {
-        id_token: idToken
-      }
-    }).then(function(response){
-      console.log("Fish Factory Add a Fish res", response);
-      return getFishData();
-    },
-    function(response){
-      console.log("ERROR post response: ", response.data);
-    });
-    return promise;
-  }
-
   function removeFish(thisFish){
     console.log("fish in da factory to delete", thisFish);
     var promise = $http({

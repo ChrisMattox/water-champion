@@ -11,7 +11,8 @@ var fishSchema = new Schema({
     weight: { type: Number, required: true},
     location: { type: String, required: true},
     gear: { type: String, required: true},
-    weather: { type: String, required: true}
+    weather: { type: String, required: true},
+    image: { type: String }
 
 });
 

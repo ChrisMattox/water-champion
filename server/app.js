@@ -27,7 +27,7 @@ app.use(decoder.token);
 
 // This is the route for your fishData. The request gets here after it has been authenticated.
 app.use("/fishData", fishData);
-app.use('/uploads', fishData);
+// app.use('/uploads', fishData);
 
 
 mongoConnection.connect();
