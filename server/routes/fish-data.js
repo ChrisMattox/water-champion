@@ -59,7 +59,7 @@ router.post('/test', upload.single('file'), function (req, res, next) {
       //
       if(newFish != null) {
         newFish.email = userEmail;
-        newFish.image = newUpload.file.filename
+        newFish.image = newUpload.file.filename;
         var fishToAdd = new Fish(newFish);
         console.log("FishToAdd", fishToAdd);
         fishToAdd.save(function(err){

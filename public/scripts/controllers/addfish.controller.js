@@ -25,6 +25,7 @@ app.controller("AddFishCtrl", ["$firebaseAuth", "$http", "FishDataFactory", "Aut
         }).then(function (response) {
           getPics();
           console.log(self.picData);
+          self.newFish = {};
         });
       });
     }

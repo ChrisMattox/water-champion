@@ -1,6 +1,8 @@
-<button ng-click="tfc.logIn()" id="loginButton">Log In</button>
-<button ng-click="tfc.logOut()" id="logOutButton">Log Out</button>
+<div class="tFC">
+<button ng-click="tfc.logIn()" class="authButton">Log In</button>
+<button ng-click="tfc.logOut()" class="authButton">Log Out</button>
 <div ng-hide="tfc.fishData.length > 0" class="parable">
+
 
 
   <p>When the wind blows from the East, the fish bite the least.<br>
@@ -18,9 +20,11 @@
 
     <div class="cheatFooter">
 
-      <div class="row" id="topFishId">
-        <div ng-repeat="fish in tfc.fishData | filter: fish.species='bass'  | limitTo: '3' | orderBy: '-fishLength'">
-          <div class="col-sm-4 topFish" class="topFish">
+      <div class="row">
+        <div ng-repeat="fish in tfc.fishData | filter: fish.species='bass' | orderBy: '-fishLength' | limitTo: '3'">
+          <div class="col-sm-4 topFish" class="topFish" id="topFishId" ng-class="{gold: $index == 0, silver: $index == 1, bronze: $index == 2}">
+            <img ng-src='uploads/{{fish.image}}' class="fishPics"></img>
+            <div class="topFishInfo">
             <h3 class="topFishSpecies">#{{$index + 1}} Bass</h3>
             <p>Length: {{fish.fishLength}} inches</p>
             <p>Weight: {{fish.weight}} pounds</p>
@@ -28,14 +32,16 @@
             <p>Location: {{fish.location}}</p>
             <p>Gear: {{fish.gear}}</p>
             <p>Weather: {{fish.weather}}</p>
-            <img ng-src='uploads/{{fish.image}}' class="fishPics"></img>
+          </div>
           </div>
         </div>
       </div>
 
-      <div class="row" id="topFishId">
-        <div ng-repeat="fish in tfc.fishData | filter: fish.species='walleye' | limitTo: '3' | orderBy: '-fishLength'">
-          <div class="col-sm-4 topFish">
+      <div class="row">
+        <div ng-repeat="fish in tfc.fishData | filter: fish.species='walleye' | orderBy: '-fishLength' | limitTo: '3'">
+          <div class="col-sm-4 topFish" id="topFishId" ng-class="{gold: $index == 0, silver: $index == 1, bronze: $index == 2}">
+            <img ng-src='uploads/{{fish.image}}' class="fishPics"></img>
+                        <div class="topFishInfo">
             <h3 class="topFishSpecies">#{{$index + 1}} Walleye</h3>
             <p>Length: {{fish.fishLength}} inches</p>
             <p>Weight: {{fish.weight}} pounds</p>
@@ -43,14 +49,16 @@
             <p>Location: {{fish.location}}</p>
             <p>Gear: {{fish.gear}}</p>
             <p>Weather: {{fish.weather}}</p>
-            <img ng-src='uploads/{{fish.image}}' class="fishPics"></img>
+          </div>
           </div>
         </div>
       </div>
 
-      <div class="row" id="topFishId">
-        <div ng-repeat="fish in tfc.fishData | filter: fish.species='muskie' | limitTo: '3' | orderBy: '-fishLength'">
-          <div class="col-sm-4 topFish" class="topFish">
+      <div class="row" >
+        <div ng-repeat="fish in tfc.fishData | filter: fish.species='muskie' | orderBy: '-fishLength' | limitTo: '3'">
+          <div class="col-sm-4 topFish" id="topFishId" ng-class="{gold: $index == 0, silver: $index == 1, bronze: $index == 2}">
+            <img ng-src='uploads/{{fish.image}}' class="fishPics"></img>
+                        <div class="topFishInfo">
             <h3 class="topFishSpecies">#{{$index + 1}} Muskie</h3>
             <p>Length: {{fish.fishLength}} inches</p>
             <p>Weight: {{fish.weight}} pounds</p>
@@ -58,44 +66,50 @@
             <p>Location: {{fish.location}}</p>
             <p>Gear: {{fish.gear}}</p>
             <p>Weather: {{fish.weather}}</p>
-            <img ng-src='uploads/{{fish.image}}' class="fishPics"></img>
+          </div>
           </div>
         </div>
       </div>
 
-      <div class="row" id="topFishId">
-        <div ng-repeat="fish in tfc.fishData | filter: fish.species='pike' | limitTo: '3' | orderBy: '-fishLength'">
-          <div class="col-sm-4 topFish" class="topFish">
+      <div class="row">
+        <div ng-repeat="fish in tfc.fishData | filter: fish.species='pike' | orderBy: '-fishLength' | limitTo: '3' ">
+          <div class="col-sm-4 topFish" id="topFishId" ng-class="{gold: $index == 0, silver: $index == 1, bronze: $index == 2}">
+            <img ng-src='uploads/{{fish.image}}' class="fishPics"></img>
             <h3 class="topFishSpecies">#{{$index + 1}} Pike</h3>
+                        <div class="topFishInfo">
             <p>Length: {{fish.fishLength}} inches</p>
             <p>Weight: {{fish.weight}} pounds</p>
             <p>Girth: {{fish.girth}} inches</p>
             <p>Location: {{fish.location}}</p>
             <p>Gear: {{fish.gear}}</p>
             <p>Weather: {{fish.weather}}</p>
-            <img ng-src='uploads/{{fish.image}}' class="fishPics"></img>
+          </div>
           </div>
         </div>
       </div>
 
-      <div class="row" id="topFishId" >
-        <div ng-repeat="fish in tfc.fishData | filter: fish.species='crappie' | limitTo: '3' | orderBy: '-fishLength'">
-          <div class="col-sm-4 topFish" class="topFish">
+      <div class="row">
+        <div ng-repeat="fish in tfc.fishData | filter: fish.species='crappie' | orderBy: '-fishLength' | limitTo: '3'">
+          <div class="col-sm-4 topFish" id="topFishId" ng-class="{gold: $index == 0, silver: $index == 1, bronze: $index == 2}">
             <h3 class="topFishSpecies">#{{$index + 1}} Crappie</h3>
+            <img ng-src='uploads/{{fish.image}}' class="fishPics"></img>
+                        <div class="topFishInfo">
             <p>Length: {{fish.fishLength}} inches</p>
             <p>Weight: {{fish.weight}} pounds</p>
             <p>Girth: {{fish.girth}} inches</p>
             <p>Location: {{fish.location}}</p>
             <p>Gear: {{fish.gear}}</p>
             <p>Weather: {{fish.weather}}</p>
-            <img ng-src='uploads/{{fish.image}}' class="fishPics"></img>
+          </div>
           </div>
         </div>
       </div>
 
-      <div class="row" id="topFishId">
-        <div ng-repeat="fish in tfc.fishData | filter: fish.species='perch' | limitTo: '3' | orderBy: '-fishLength'">
-          <div class="col-sm-4 topFish" class="topFish">
+      <div class="row">
+        <div ng-repeat="fish in tfc.fishData | filter: fish.species='perch' | orderBy: '-fishLength' | limitTo: '3' ">
+          <div class="col-sm-4 topFish" id="topFishId" ng-class="{gold: $index == 0, silver: $index == 1, bronze: $index == 2}">
+            <img ng-src='uploads/{{fish.image}}' class="fishPics"></img>
+            <div class="topFishInfo">
             <h3 class="topFishSpecies">#{{$index + 1}} Perch</h3>
             <p>Length: {{fish.fishLength}} inches</p>
             <p>Weight: {{fish.weight}} pounds</p>
@@ -103,14 +117,16 @@
             <p>Location: {{fish.location}}</p>
             <p>Gear: {{fish.gear}}</p>
             <p>Weather: {{fish.weather}}</p>
-            <img ng-src='uploads/{{fish.image}}' class="fishPics"></img>
+          </div>
           </div>
         </div>
       </div>
 
-      <div class="row" id="topFishId">
-        <div ng-repeat="fish in tfc.fishData | filter: fish.species='rockbass' | limitTo: '3' | orderBy: '-fishLength'">
-          <div class="col-sm-4 topFish" class="topFish">
+      <div class="row">
+        <div ng-repeat="fish in tfc.fishData | filter: fish.species='rockbass' | orderBy: '-fishLength' | limitTo: '3'">
+          <div class="col-sm-4 topFish"  id="topFishId" ng-class="{gold: $index == 0, silver: $index == 1, bronze: $index == 2}">
+            <img ng-src='uploads/{{fish.image}}' class="fishPics" ></img>
+                        <div class="topFishInfo">
             <h3 class="topFishSpecies">#{{$index + 1}} Rock Bass</h3>
             <p>Length: {{fish.fishLength}} inches</p>
             <p>Weight: {{fish.weight}} pounds</p>
@@ -118,10 +134,11 @@
             <p>Location: {{fish.location}}</p>
             <p>Gear: {{fish.gear}}</p>
             <p>Weather: {{fish.weather}}</p>
-            <img ng-src='uploads/{{fish.image}}' class="fishPics"></img>
+          </div>
           </div>
         </div>
       </div>
 
     </div>
- </div>
+  </div>
+</div>

@@ -13,12 +13,12 @@
 - [x] searchable view table
 - [] style this weekend, make water champion logo, FIGURE OUT ACTUAL APP NAME
 - [x] Get form to no longer submit after log out
-- [] Form validation
+- [x] Form validation
 - [x] Dropdown for species submit
 - [x] get uploads working
 - [x] tie photos to user emails, get them displaying on the DOM by persisting them in a factory
 - [x] google maps API
-- [] get location data off photo upload and into google maps
+
 
 
 
@@ -29,6 +29,11 @@
 - [] Nabbing GPS data of stored photos with mongo
 - [] Admin page for creating users
 - [] Overall scoreboard of winners, regardless of login status
+- [] Stats page -- averages, most used baits, best lake, etc
+- [] Standing page
+- --[]Available to Public, not auth needed. New view, new factory. 
+- --[]Get Request for All User's data
+- --[]Displayed in a meaningful way
 
 **Current Questions**
 

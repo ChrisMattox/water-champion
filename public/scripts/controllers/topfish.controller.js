@@ -47,6 +47,7 @@ function getFishies(){
       // if(FishDataFactory.fishData() == undefined) {
         FishDataFactory.updateFish().then(function(response) {
           self.fishData = FishDataFactory.fishData();
+                    console.log(self.fishData);
           return self.fishData;
         });
     }).catch(function(error) {

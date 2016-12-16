@@ -1,15 +1,12 @@
 #mainBody {
-  background:
-  radial-gradient(black 15%, transparent 16%) 0 0,
-  radial-gradient(black 15%, transparent 16%) 8px 8px,
-  radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 0 1px,
-  radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 8px 9px;
-  background-color:#282828;
-  background-size:16px 16px;
+  background-color: hsl(2, 57%, 40%);
+  background-image: repeating-linear-gradient(transparent, transparent 50px, rgba(0,0,0,.4) 50px, rgba(0,0,0,.4) 53px, transparent 53px, transparent 63px, rgba(0,0,0,.4) 63px, rgba(0,0,0,.4) 66px, transparent 66px, transparent 116px, rgba(0,0,0,.5) 116px, rgba(0,0,0,.5) 166px, rgba(255,255,255,.2) 166px, rgba(255,255,255,.2) 169px, rgba(0,0,0,.5) 169px, rgba(0,0,0,.5) 179px, rgba(255,255,255,.2) 179px, rgba(255,255,255,.2) 182px, rgba(0,0,0,.5) 182px, rgba(0,0,0,.5) 232px, transparent 232px),
+  repeating-linear-gradient(270deg, transparent, transparent 50px, rgba(0,0,0,.4) 50px, rgba(0,0,0,.4) 53px, transparent 53px, transparent 63px, rgba(0,0,0,.4) 63px, rgba(0,0,0,.4) 66px, transparent 66px, transparent 116px, rgba(0,0,0,.5) 116px, rgba(0,0,0,.5) 166px, rgba(255,255,255,.2) 166px, rgba(255,255,255,.2) 169px, rgba(0,0,0,.5) 169px, rgba(0,0,0,.5) 179px, rgba(255,255,255,.2) 179px, rgba(255,255,255,.2) 182px, rgba(0,0,0,.5) 182px, rgba(0,0,0,.5) 232px, transparent 232px),
+  repeating-linear-gradient(125deg, transparent, transparent 2px, rgba(0,0,0,.2) 2px, rgba(0,0,0,.2) 3px, transparent 3px, transparent 5px, rgba(0,0,0,.2) 5px);
 }
 
 h1 {
-  color: grey;
+  color: #263238;
   font-family: 'Fjalla One', sans-serif;
   margin-left: 20px;
   font-size: 50px;
@@ -17,15 +14,39 @@ h1 {
 
 h2 {
   font-family: 'Fjalla One', sans-serif;
+
 }
 
 .fishPics {
-  height: 200px;
-  width: 200px;
-  position: absolute;
-  right: 5px;
-  bottom: 30px;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
 }
+
+.authButton {
+	-moz-box-shadow:inset 0px 34px 0px -15px #b54b3a;
+	-webkit-box-shadow:inset 0px 34px 0px -15px #b54b3a;
+	box-shadow:inset 0px 34px 0px -15px #b54b3a;
+	background-color:#a73f2d;
+	border:1px solid #241d13;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:9px 23px;
+	text-decoration:none;
+	text-shadow:0px -1px 0px #7a2a1d;
+}
+.authButton:hover {
+	background-color:#b34332;
+}
+.authButton:active {
+	position:relative;
+	top:1px;
+}
+
 
 .mapSize {
 
@@ -33,27 +54,27 @@ h2 {
   /*width: 70vw;*/
 }
 
-.parable {
+.parable>p{
+  font-family: 'Patrick Hand SC', cursive;
   margin: 0 auto;
   height: 300px;
   width: 500px;
-  background-color: lightblue;
+  background-color: #FFF;
   padding: 20px;
   border-radius: 10px;
+  font-family: 'Gochi Hand';
+  font-size: 22px;
 }
 
 .uploads {
-  background-color: lightblue;
+  background-color: #FFF;
 }
 
 #logo {
-  float: left;
-  margin-left: 20px;
-  margin-right: 30px;
-}
-
-button hover:#loginButton {
-  background-color: magenta;
+  display: block;
+  margin: auto;
+  width: 40%;
+  max-width: 300px;
 }
 
 .headerthing {
@@ -72,7 +93,7 @@ button hover:#loginButton {
 }
 
 .topFish {
-  background-color: lightblue;
+  /*background-color: lightblue;*/
   -webkit-box-shadow: 4px 4px 21px -4px rgba(0,0,0,0.65);
   -moz-box-shadow: 4px 4px 21px -4px rgba(0,0,0,0.65);
   box-shadow: 4px 4px 21px -4px rgba(0,0,0,0.65);
@@ -87,10 +108,10 @@ button hover:#loginButton {
 }
 
 .navBar {
-  background-color: black;
+  background-color: #495168;
   margin-top: -10px;
-  border-bottom: 1px solid grey;
-  border-top: 1px solid grey;
+  border-bottom: 15px solid #93AFBD;
+  /*border-top: 5px solid #1DE9B6;*/
 }
 
 
@@ -101,45 +122,45 @@ h3 {
 p {
   font-family: 'Fjalla One', sans-serif;
   font-family: 'Hind', sans-serif;
+  color: #263238;
 }
 
 .topFish {
-
-    animation-name: dropHeader;
-    animation-iteration-count: 1;
-    animation-timing-function: ease-out;
-    animation-duration: 0.6s;
+  animation-name: dropHeader;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-out;
+  animation-duration: 0.6s;
 }
 .topFish ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 .topFish ul li{
-    display: inline-block;
-    margin-right: 20px
+  display: inline-block;
+  margin-right: 20px
 }
 
 @keyframes dropHeader {
-    0% {
-        transform: translateY(50%);
-        opacity: 0;
-    }
-    100% {
-        transform: translateY(0);
-        opacity: 1;
-    }
+  0% {
+    /*transform: translateY(50%);*/
+    opacity: 0;
+  }
+  100% {
+    /*transform: translateY(0);*/
+    opacity: 1;
+  }
 
 }
 
 @keyframes shake {
-	0% { transform: translate(0px); opacity: 0;}
-	17% { transform: translate(10px); }
-	34% { transform: translate(-10px); }
-	51% { transform: translate(6px); }
-	68% { transform: translate(-6px); }
-	85% { transform: translate(3px); }
-	100% { transform: translate(0px); opacity: 1;}
+  0% { transform: translate(0px); opacity: 0;}
+  17% { transform: translate(10px); }
+  34% { transform: translate(-10px); }
+  51% { transform: translate(6px); }
+  68% { transform: translate(-6px); }
+  85% { transform: translate(3px); }
+  100% { transform: translate(0px); opacity: 1;}
 }
 
 .mainFishForm {
@@ -147,7 +168,7 @@ p {
   font-weight: 100;
   font-size: 12px;
   line-height: 30px;
-  color: #777;
+  color: #263238;
 }
 
 .mainFishForm {
@@ -167,7 +188,7 @@ p {
 }
 
 #fishForm {
-  background: lightblue;
+  background: #ECECEC;
   padding: 25px;
   margin: 10px 0;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
@@ -261,217 +282,233 @@ fieldset {
   color: white;
 }
 
-.dropForm {
 
-    animation-name: dropForm;
-    animation-iteration-count: 1;
-    animation-timing-function: ease-out;
-    animation-duration: 0.6s;
-}
-
-@keyframes dropForm {
-    0% {
-        transform: translateY(50%);
-        opacity: 0;
-    }
-    100% {
-        transform: translateY(0);
-        opacity: 1;
-    }
-
-}
 
 #tableId{
-  background-color: lightblue;
+  background-color: #ECECEC;
   padding: 10px;
 }
 
-/*#topFishId:hover  {
-  background-color: yellow;
+#topFishId:hover  {
+  -webkit-box-shadow: 0px 0px 20px 0px rgba(41,147,217,1);
+  -moz-box-shadow: 0px 0px 20px 0px rgba(41,147,217,1);
+  box-shadow: 0px 0px 20px 0px rgba(41,147,217,1);
+  /*animation-name: topFishId;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-out;
+  animation-duration: 0.6s;*/
+}
+/*
+@keyframes topFishId {
+  0%, 100% { font-size: 16px; }
+  50% {  font-size: 22px; }
 }*/
+
+
+.dropForm {
+
+  animation-name: dropForm;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-out;
+  animation-duration: 0.6s;
+}
+
+@keyframes dropForm {
+  0% {
+    /*transform: translateY(50%);*/
+    opacity: 0;
+  }
+  100% {
+    /*transform: translateY(0);*/
+    opacity: 1;
+  }
+
+}
+
+
 
 .footer-distributed {
 
 }
 
 .jumbotron {
-    margin-bottom: 0px;
-    background-image: url('../assets/images/lake.png');
-    background-position: 0% 99%;
-    background-repeat: no-repeat;
-    text-shadow: black 0.3em 0.3em 0.3em;
-    height: 200px;
+  margin-bottom: 0px;
+  /*background-image: url('../assets/images/lake.png');*/
+  background-position: 0% 99%;
+  background-repeat: no-repeat;
+  text-shadow: black 0.3em 0.3em 0.3em;
+  height: 200px;
 }
 
 .footer-distributed{
-	background-color: #292c2f;
-	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
-	box-sizing: border-box;
-	width: 100%;
-	text-align: left;
-	font: bold 16px sans-serif;
+  background-color: #495168;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+  box-sizing: border-box;
+  width: 100%;
+  text-align: left;
+  font: bold 16px sans-serif;
   color: white;
-	padding: 55px 50px;
-	margin-top: 80px;
+  padding: 55px 50px;
+  margin-top: 80px;
   position:relative;
-  border-top: 5px solid lightblue;
+  border-top: 15px solid #93AFBD;
 
 }
 
 .footer-distributed .footer-left,
 .footer-distributed .footer-center,
 .footer-distributed .footer-right{
-	display: inline-block;
-	vertical-align: top;
+  display: inline-block;
+  vertical-align: top;
 }
 
 /* Footer left */
 
 .footer-distributed .footer-left{
-	width: 40%;
+  width: 40%;
 }
 
 /* The company logo */
 
 .footer-distributed h3{
-	color:  #ffffff;
-	font: normal 36px 'Cookie', cursive;
-	margin: 0;
+  color:  #ffffff;
+  font: normal 36px 'Cookie', cursive;
+  margin: 0;
 }
 
 .footer-distributed h3 span{
-	color:  #5383d3;
+  color:  #5383d3;
 }
 
 /* Footer links */
 
 .footer-distributed .footer-links{
-	color:  #ffffff;
-	margin: 20px 0 12px;
-	padding: 0;
+  color:  #ffffff;
+  margin: 20px 0 12px;
+  padding: 0;
 }
 
 .footer-distributed .footer-links a{
-	display:inline-block;
-	line-height: 1.8;
-	text-decoration: none;
-	color:  inherit;
+  display:inline-block;
+  line-height: 1.8;
+  text-decoration: none;
+  color:  inherit;
 }
 
 .footer-distributed .footer-company-name{
-	color:  #8f9296;
-	font-size: 14px;
-	font-weight: normal;
-	margin: 0;
+  color:  #8f9296;
+  font-size: 14px;
+  font-weight: normal;
+  margin: 0;
 }
 
 /* Footer Center */
 
 .footer-distributed .footer-center{
-	width: 35%;
+  width: 35%;
 }
 
 .footer-distributed .footer-center i{
-	background-color:  #33383b;
-	color: #ffffff;
-	font-size: 25px;
-	width: 38px;
-	height: 38px;
-	border-radius: 50%;
-	text-align: center;
-	line-height: 42px;
-	margin: 10px 15px;
-	vertical-align: middle;
+  background-color:  #33383b;
+  color: #ffffff;
+  font-size: 25px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 42px;
+  margin: 10px 15px;
+  vertical-align: middle;
 }
 
 .footer-distributed .footer-center i.fa-envelope{
-	font-size: 17px;
-	line-height: 38px;
+  font-size: 17px;
+  line-height: 38px;
 }
 
 .footer-distributed .footer-center p{
-	display: inline-block;
-	color: #ffffff;
-	vertical-align: middle;
-	margin:0;
+  display: inline-block;
+  color: #ffffff;
+  vertical-align: middle;
+  margin:0;
 }
 
 .footer-distributed .footer-center p span{
-	display:block;
-	font-weight: normal;
-	font-size:14px;
-	line-height:2;
+  display:block;
+  font-weight: normal;
+  font-size:14px;
+  line-height:2;
 }
 
 .footer-distributed .footer-center p a{
-	color:  #5383d3;
-	text-decoration: none;;
+  color:  #5383d3;
+  text-decoration: none;;
 }
 
 
 /* Footer Right */
 
 .footer-distributed .footer-right{
-	width: 20%;
+  width: 20%;
 }
 
 .footer-distributed .footer-company-about{
-	line-height: 20px;
-	color:  #92999f;
-	font-size: 13px;
-	font-weight: normal;
-	margin: 0;
+  line-height: 20px;
+  color:  #92999f;
+  font-size: 13px;
+  font-weight: normal;
+  margin: 0;
 }
 
 .footer-distributed .footer-company-about span{
-	display: block;
-	color:  #ffffff;
-	font-size: 14px;
-	font-weight: bold;
-	margin-bottom: 20px;
+  display: block;
+  color:  #ffffff;
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 20px;
 }
 
 .footer-distributed .footer-icons{
-	margin-top: 25px;
+  margin-top: 25px;
 }
 
 .footer-distributed .footer-icons a{
-	display: inline-block;
-	width: 35px;
-	height: 35px;
-	cursor: pointer;
-	background-color:  #33383b;
-	border-radius: 2px;
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+  background-color:  #33383b;
+  border-radius: 2px;
 
-	font-size: 20px;
-	color: #ffffff;
-	text-align: center;
-	line-height: 35px;
+  font-size: 20px;
+  color: #ffffff;
+  text-align: center;
+  line-height: 35px;
 
-	margin-right: 3px;
-	margin-bottom: 5px;
+  margin-right: 3px;
+  margin-bottom: 5px;
 }
 
 /* If you don't want the footer to be responsive, remove these media queries */
 
 @media (max-width: 880px) {
 
-	.footer-distributed{
-		font: bold 14px sans-serif;
-	}
+  .footer-distributed{
+    font: bold 14px sans-serif;
+  }
 
-	.footer-distributed .footer-left,
-	.footer-distributed .footer-center,
-	.footer-distributed .footer-right{
-		display: block;
-		width: 100%;
-		margin-bottom: 40px;
-		text-align: center;
-	}
+  .footer-distributed .footer-left,
+  .footer-distributed .footer-center,
+  .footer-distributed .footer-right{
+    display: block;
+    width: 100%;
+    margin-bottom: 40px;
+    text-align: center;
+  }
 
-	.footer-distributed .footer-center i{
-		margin-left: 0;
-	}
+  .footer-distributed .footer-center i{
+    margin-left: 0;
+  }
 
 }
 
@@ -483,4 +520,130 @@ fieldset {
   padding: 1rem;
   background-color: #efefef;
   text-align: center;
+}
+
+@import "compass/css3";
+
+@import "compass/css3";
+@import url(http://fonts.googleapis.com/css?family=Patua+One|Open+Sans);
+
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+body {
+  /*background:#353a40;*/
+}
+
+table {
+  border-collapse: separate;
+  background:#ECECEC;
+  @include border-radius(5px);
+  margin:50px auto;
+  @include box-shadow(0px 0px 5px rgba(0,0,0,0.3));
+}
+
+thead {
+  @include border-radius(5px);
+}
+
+thead th {
+  font-family:'Fjalla One', sans-serif;
+  font-size:16px;
+  font-weight:400;
+  color:#5f6062;
+  @include text-shadow(1px 1px 0px rgba(0,0,0,0.5));
+  text-align:left;
+  padding:20px;
+  @include background-image(linear-gradient(#646f7f, #4a5564));
+  border-top:1px solid #858d99;
+
+  &:first-child {
+   @include border-top-left-radius(5px);
+  }
+
+  &:last-child {
+    @include border-top-right-radius(5px);
+  }
+}
+
+tbody tr td {
+  font-family:'Fjalla One', sans-serif;
+  font-weight:400;
+  color:#5f6062;
+  font-size:13px;
+  padding:20px 20px 20px 20px;
+  border-bottom:1px solid #e0e0e0;
+
+}
+
+tbody tr:nth-child(2n) {
+  /*background:#f0f3f5;*/
+}
+
+tbody tr:last-child td {
+  border-bottom:none;
+  &:first-child {
+    @include border-bottom-left-radius(5px);
+  }
+  &:last-child {
+    @include border-bottom-right-radius(5px);
+  }
+}
+/*
+tbody:hover > tr td {
+  @include opacity(0.5);
+
+   color:transparent;
+  @include text-shadow(0px 0px 2px rgba(0,0,0,0.8));
+}
+
+tbody:hover > tr:hover td {
+  @include text-shadow(none);
+  color:#2d2d2d;
+  @include opacity(.8);
+}*/
+
+.gold {
+  background-color: #ECECEC;
+  border-top: 20px solid transparent;
+  border-image: url("/assets/images/gold.jpg") 30 round;
+  background-image: url("/assets/images/GOLDtrophy.png");
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  background-size: 250px 250px;
+}
+
+.silver {
+  background-color: #ECECEC;
+  border-top: 20px solid transparent;
+  border-image: url("/assets/images/silver.jpg") 30 round;
+  background-image: url("/assets/images/SILVERtrophy.png");
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  background-size: 250px 250px;
+}
+
+.bronze {
+  background-color: #ECECEC;
+  border-top: 20px solid transparent;
+  border-image: url("/assets/images/bronze.jpg") 30 round;
+  background-image: url("/assets/images/BRONZEtrophy.png");
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  background-size: 250px 250px;
+}
+
+.topFishInfo {
+  opacity: 70%;
+  margin: 10px;
+  padding: 10px;
+}
+
+.buttonStyle {
+  color: #BACDCB;
+  font-family:'Fjalla One', sans-serif;    font-size: 28px;
+    font-style: oblique;
 }

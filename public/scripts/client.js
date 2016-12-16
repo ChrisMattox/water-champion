@@ -23,6 +23,11 @@ app.config(['$routeProvider', function($routeProvider) {
     controller: 'MapCtrl',
     controllerAs: 'mc'
   })
+  .when('/standings', {
+    templateUrl: '/views/templates/standings.html',
+    controller: 'StandingsCtrl',
+    controllerAs: 'sc'
+  })
   .otherwise({
     redirectTo: 'topfish'
   });

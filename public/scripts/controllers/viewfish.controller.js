@@ -6,7 +6,6 @@ app.controller("ViewFishCtrl", ["$firebaseAuth", "$http", "FishDataFactory", "Au
     getFishies();
 
     function getFishies(){
-
       self.currentUser = AuthDataFactory.getCurrentUser();
       if(self.currentUser) {
         self.currentUser.getToken().then(function(idToken){
