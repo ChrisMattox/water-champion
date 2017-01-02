@@ -56,6 +56,7 @@ router.post('/test', upload.single('file'), function (req, res, next) {
       next(err);
     } else {
       console.log("We have a bite!", newFish);
+      console.log("Uploaded File...", newUpload);
       //
       if(newFish != null) {
         newFish.email = userEmail;
