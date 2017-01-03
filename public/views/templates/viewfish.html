@@ -1,8 +1,46 @@
-<h3 class="whosFish">View Fish</h3>
+<div class="row" ng-if="vfc.fishData.length > 0">
+<div class="statsPage col-sm-4">
+<div class = "fishStats">
+<h3 class="statTitle">Fish Stats for {{vfc.currentUser.displayName}}</h3>
+<p class="stats"> Most Used Bait: {{vfc.mostUsedGear}} </p>
+<p class="stats"> Most Fished Lake: {{vfc.mostUsedLake}} </p>
+<p class="stats"> Most Species Caught: {{vfc.mostCaughtBreed}} </p>
+<p class="stats"> Average Fish Length: {{vfc.averageLength}} inches</p>
+<p class="stats"> Average Fish Weight: {{vfc.averageWeight}} pounds</p>
+<h3 class="statTitle">Bass Stats</h3>
+<p class="stats"> Average Length: {{vfc.averageBassLength}} inches</p>
+<p class="stats"> Average Weight: {{vfc.averageBassWeight}} pounds</p>
+<p class="stats"> Most Used Tackle: {{vfc.mostUsedBassGear}}</p>
+<h3 class="statTitle">Walleye Stats</h3>
+<p class="stats"> Average Walleye Length: {{vfc.averageWalleyeLength}} inches</p>
+<p class="stats"> Average Walleye Weight: {{vfc.averageWalleyeWeight}} pounds</p>
+<p class="stats"> Most Used Tackle: {{vfc.mostUsedWalleyeGear}}</p>
+<h3 class="statTitle">Muskie Stats</h3>
+<p class="stats"> Average Muskie Length: {{vfc.averageMuskieLength}} inches</p>
+<p class="stats"> Average Muskie Weight: {{vfc.averageMuskieWeight}} pounds</p>
+<p class="stats"> Most Used Tackle: {{vfc.mostUsedMuskieGear}}</p>
+<h3 class="statTitle">Pike Stats</h3>
+<p class="stats"> Average Pike Length: {{vfc.averagePikeLength}} inches</p>
+<p class="stats"> Average Pike Weight: {{vfc.averagePikeWeight}} pounds</p>
+<p class="stats"> Most Used Tackle: {{vfc.mostUsedPikeGear}}</p>
+<h3 class="statTitle">Crappie Stats</h3>
+<p class="stats"> Average Crappie Length: {{vfc.averageCrappieLength}} inches</p>
+<p class="stats"> Average Crappie Weight: {{vfc.averageCrappieLength}} pounds</p>
+<p class="stats"> Most Used Tackle: {{vfc.mostCrappieGear}}</p>
+<h3 class="statTitle">Perch Stats</h3>
+<p class="stats"> Average Perch Length: {{vfc.averagePerchLength}} inches</p>
+<p class="stats"> Average Perch Weight: {{vfc.averagePerchLength}} pounds</p>
+<p class="stats"> Most Used Tackle: {{vfc.mostPerchGear}}</p>
+<h3 class="statTitle">Rock Bass Stats</h3>
+<p class="stats"> Average Rock Bass Length: {{vfc.averageRockBassLength}} inches</p>
+<p class="stats"> Average Rock Bass Length: {{vfc.averageRockBassWeight}} pounds</p>
+<p class="stats"> Most Used Tackle: {{vfc.mostUsedRockBassGear}}</p>
+</div>
+</div>
+
+<div class= "col-sm-8">
 <table class="table table-hover table-inverse" id="tableId" ng-if="vfc.fishData.length > 0">
-
-  <h3 class="whosFish">Search</h3><input type="text" ng-model="searchBox">
-
+<h3 class="whosFish">Search All Fish</h3><input type="text" ng-model="searchBox">
   <thead>
     <tr>
       <th>Species</th>
@@ -27,9 +65,5 @@
     </tr>
   </tbody>
 </table>
-
-<h3 class="whosFish"> Most Used Bait: {{vfc.mostUsedGear}} </h3>
-<h3 class="whosFish"> Most Fished Lake: {{vfc.mostUsedLake}} </h3>
-<h3 class="whosFish"> Most Species Caught: {{vfc.mostCaughtBreed}} </h3>
-<h3 class="whosFish"> Average Fish Length: {{vfc.averageLength}} </h3>
-<h3 class="whosFish"> Average Fish Weight: {{vfc.averageWeight}} </h3>
+</div>
+</div>

@@ -29,9 +29,9 @@
 - [] Nabbing GPS data of stored photos with mongo
 - [] Admin page for creating users
 - [] Overall scoreboard of winners, regardless of login status
-- [] Stats page -- averages, most used baits, best lake, etc
+- [x] Stats page -- averages, most used baits, best lake, etc
 - [] Standing page
-- --[]Available to Public, not auth needed. New view, new factory. 
+- --[]Available to Public, not auth needed. New view, new factory.
 - --[]Get Request for All User's data
 - --[]Displayed in a meaningful way
 

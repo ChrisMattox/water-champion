@@ -647,3 +647,19 @@ tbody:hover > tr:hover td {
   font-family:'Fjalla One', sans-serif;    font-size: 28px;
     font-style: oblique;
 }
+
+.fishStats {
+  text-align: left;
+  background-color: #ECECEC;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.stats {
+  font-family:'Fjalla One', sans-serif;
+  font-size: 14px;
+}
+
+.statTitle {
+  text-decoration: underline;
+}
