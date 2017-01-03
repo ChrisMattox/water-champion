@@ -11,30 +11,37 @@
 <p class="stats"> Average Length: {{vfc.averageBassLength}} inches</p>
 <p class="stats"> Average Weight: {{vfc.averageBassWeight}} pounds</p>
 <p class="stats"> Most Used Tackle: {{vfc.mostUsedBassGear}}</p>
+<p class="stats"> Most Fished Bass Lake: {{vfc.topBassLake}}</p>
 <h3 class="statTitle">Walleye Stats</h3>
 <p class="stats"> Average Walleye Length: {{vfc.averageWalleyeLength}} inches</p>
 <p class="stats"> Average Walleye Weight: {{vfc.averageWalleyeWeight}} pounds</p>
 <p class="stats"> Most Used Tackle: {{vfc.mostUsedWalleyeGear}}</p>
+<p class="stats"> Most Fished Walleye Lake: {{vfc.topWalleyeLake}}</p>
 <h3 class="statTitle">Muskie Stats</h3>
 <p class="stats"> Average Muskie Length: {{vfc.averageMuskieLength}} inches</p>
 <p class="stats"> Average Muskie Weight: {{vfc.averageMuskieWeight}} pounds</p>
 <p class="stats"> Most Used Tackle: {{vfc.mostUsedMuskieGear}}</p>
+<p class="stats"> Most Fished Muskie Lake: {{vfc.topMuskieLake}}</p>
 <h3 class="statTitle">Pike Stats</h3>
 <p class="stats"> Average Pike Length: {{vfc.averagePikeLength}} inches</p>
 <p class="stats"> Average Pike Weight: {{vfc.averagePikeWeight}} pounds</p>
 <p class="stats"> Most Used Tackle: {{vfc.mostUsedPikeGear}}</p>
+<p class="stats"> Most Fished Pike Lake: {{vfc.topPikeLake}}</p>
 <h3 class="statTitle">Crappie Stats</h3>
 <p class="stats"> Average Crappie Length: {{vfc.averageCrappieLength}} inches</p>
 <p class="stats"> Average Crappie Weight: {{vfc.averageCrappieLength}} pounds</p>
 <p class="stats"> Most Used Tackle: {{vfc.mostCrappieGear}}</p>
+<p class="stats"> Most Fished Crappie Lake: {{vfc.topCrappieLake}}</p>
 <h3 class="statTitle">Perch Stats</h3>
 <p class="stats"> Average Perch Length: {{vfc.averagePerchLength}} inches</p>
 <p class="stats"> Average Perch Weight: {{vfc.averagePerchLength}} pounds</p>
 <p class="stats"> Most Used Tackle: {{vfc.mostPerchGear}}</p>
+<p class="stats"> Most Fished Perch Lake: {{vfc.topPerchLake}}</p>
 <h3 class="statTitle">Rock Bass Stats</h3>
 <p class="stats"> Average Rock Bass Length: {{vfc.averageRockBassLength}} inches</p>
 <p class="stats"> Average Rock Bass Length: {{vfc.averageRockBassWeight}} pounds</p>
 <p class="stats"> Most Used Tackle: {{vfc.mostUsedRockBassGear}}</p>
+<p class="stats"> Most Fished Rock Bass Lake: {{vfc.topRockBassLake}}</p>
 </div>
 </div>
 
@@ -61,9 +68,18 @@
       <td>{{fish.location}}</td>
       <td>{{fish.gear}}</td>
       <td>{{fish.weather}}</td>
+      <td>
+        <!-- <a href="uploads/{{fish.image}}"> -->
+      <img ng-src='uploads/{{fish.image}}' class="fishTableThumb"></img>
+    <!-- </a> -->
+    </td>
       <td><button class = "btn btn-danger" ng-click="vfc.deleteFish(fish)">Release</button></td>
     </tr>
   </tbody>
 </table>
+
+<div ng-repeat="fish in vfc.fishData">
+
+</div>
 </div>
 </div>

@@ -12,24 +12,31 @@ app.controller("ViewFishCtrl", ["$firebaseAuth", "$http", "FishDataFactory", "Au
   self.bassArray = [];
   self.bassWeightArray = [];
   self.bassGearArray = [];
+  self.bassLakeArray = [];
   self.walleyeArray = [];
   self.walleyeWeightArray = [];
   self.walleyeGearArray = [];
+  self.walleyeLakeArray = [];
   self.muskieArray = [];
   self.muskieWeightArray = [];
   self.muskieGearArray = [];
+  self.muskieLakeArray = [];
   self.pikeArray = [];
   self.pikeWeightArray = [];
   self.pikeGearArray = [];
+  self.pikeLakeArray = [];
   self.crappieArray = [];
   self.crappieWeightArray = [];
   self.crappieGearArray = [];
+  self.crappieLakeArray = [];
   self.perchArray = [];
   self.perchWeightArray = [];
   self.perchGearArray = [];
+  self.perchLakeArray = [];
   self.rockBassArray = [];
   self.rockBassWeightArray = [];
   self.rockBassGearArray = [];
+  self.rockBassLakeArray = [];
 
   getFishies();
 
@@ -95,9 +102,12 @@ app.controller("ViewFishCtrl", ["$firebaseAuth", "$http", "FishDataFactory", "Au
             self.bassArray.push(self.allBass[i].fishLength);
             self.bassWeightArray.push(self.allBass[i].weight);
             self.bassGearArray.push(self.allBass[i].gear);
+            self.bassLakeArray.push(self.allBass[i].location);
           }
 
           self.mostUsedBassGear = mode(self.bassGearArray);
+          self.topBassLake = mode(self.bassLakeArray);
+
 
           var bassLengthSum = 0.0000;
           for (var i = 0; i < self.bassArray.length; i++) {
@@ -132,9 +142,11 @@ app.controller("ViewFishCtrl", ["$firebaseAuth", "$http", "FishDataFactory", "Au
             self.walleyeArray.push(self.allWalleye[i].fishLength);
             self.walleyeWeightArray.push(self.allWalleye[i].weight);
             self.walleyeGearArray.push(self.allWalleye[i].gear);
+            self.walleyeLakeArray.push(self.allWalleye[i].location);
           }
 
           self.mostUsedWalleyeGear = mode(self.walleyeGearArray);
+          self.topWalleyeLake = mode(self.walleyeLakeArray);
 
           var walleyeLengthSum = 0.0000;
           for (var i = 0; i < self.walleyeArray.length; i++) {
@@ -168,9 +180,11 @@ app.controller("ViewFishCtrl", ["$firebaseAuth", "$http", "FishDataFactory", "Au
             self.muskieArray.push(self.allMuskie[i].fishLength);
             self.muskieWeightArray.push(self.allMuskie[i].weight);
             self.muskieGearArray.push(self.allMuskie[i].gear);
+            self.muskieLakeArray.push(self.allMuskie[i].location);
           }
 
           self.mostUsedMuskieGear = mode(self.muskieGearArray);
+          self.topMuskieLake = mode(self.walleyeLakeArray);
 
           var muskieLengthSum = 0.0000;
           for (var i = 0; i < self.muskieArray.length; i++) {
@@ -204,9 +218,12 @@ app.controller("ViewFishCtrl", ["$firebaseAuth", "$http", "FishDataFactory", "Au
             self.pikeArray.push(self.allPike[i].fishLength);
             self.pikeWeightArray.push(self.allPike[i].weight);
             self.pikeGearArray.push(self.allPike[i].gear);
+            self.pikeLakeArray.push(self.allPike[i].location);
           }
 
           self.mostUsedPikeGear = mode(self.pikeGearArray);
+          self.topPikeLake = mode(self.pikeLakeArray);
+
 
           var pikeLengthSum = 0.0000;
           for (var i = 0; i < self.pikeArray.length; i++) {
@@ -242,9 +259,11 @@ app.controller("ViewFishCtrl", ["$firebaseAuth", "$http", "FishDataFactory", "Au
             self.crappieArray.push(self.allCrappie[i].fishLength);
             self.crappieWeightArray.push(self.allCrappie[i].weight);
             self.crappieGearArray.push(self.allCrappie[i].gear);
+            self.crappieLakeArray.push(self.allCrappie[i].location);
           }
 
           self.mostUsedCrappieGear = mode(self.crappieGearArray);
+          self.topCrappieLake = mode(self.crappieLakeArray);
 
           var crappieLengthSum = 0.0000;
           for (var i = 0; i < self.crappieArray.length; i++) {
@@ -280,9 +299,11 @@ app.controller("ViewFishCtrl", ["$firebaseAuth", "$http", "FishDataFactory", "Au
             self.perchArray.push(self.allPerch[i].fishLength);
             self.perchWeightArray.push(self.allPerch[i].weight);
             self.perchGearArray.push(self.allPerch[i].gear);
+            self.perchLakeArray.push(self.allPerch[i].location);
           }
 
           self.mostUsedPerchGear = mode(self.perchGearArray);
+          self.topPerchLake = mode(self.perchLakeArray);
 
           var perchLengthSum = 0.0000;
           for (var i = 0; i < self.perchArray.length; i++) {
@@ -319,9 +340,11 @@ app.controller("ViewFishCtrl", ["$firebaseAuth", "$http", "FishDataFactory", "Au
             self.rockBassArray.push(self.allRockBass[i].fishLength);
             self.rockBassWeightArray.push(self.allRockBass[i].weight);
             self.rockBassGearArray.push(self.allRockBass[i].gear);
+            self.rockBassLakeArray.push(self.allRockBass[i].location);
           }
 
           self.mostUsedRockBassGear = mode(self.rockBassGearArray);
+          self.topRockBassLake = mode(self.rockBassLakeArray);
 
           var rockBassLengthSum = 0.0000;
           for (var i = 0; i < self.rockBassArray.length; i++) {
@@ -364,6 +387,9 @@ app.controller("ViewFishCtrl", ["$firebaseAuth", "$http", "FishDataFactory", "Au
       getFishies();
     });
   }
+
+
+  console.log(FishDataFactory.picData());
 
   //function to sort arrays by most used
   function mode(arr){

@@ -23,8 +23,8 @@ app.config(['$routeProvider', function($routeProvider) {
     controller: 'MapCtrl',
     controllerAs: 'mc'
   })
-  .when('/standings', {
-    templateUrl: '/views/templates/standings.html',
+  .when('/fishPics', {
+    templateUrl: '/views/templates/fishPics.html',
     controller: 'StandingsCtrl',
     controllerAs: 'sc'
   })

@@ -644,8 +644,9 @@ tbody:hover > tr:hover td {
 
 .buttonStyle {
   color: #BACDCB;
-  font-family:'Fjalla One', sans-serif;    font-size: 28px;
-    font-style: oblique;
+  font-family:'Fjalla One', sans-serif;
+  font-size: 18px;
+  font-style: oblique;
 }
 
 .fishStats {
@@ -662,4 +663,21 @@ tbody:hover > tr:hover td {
 
 .statTitle {
   text-decoration: underline;
+}
+
+.fishTableThumb {
+  height: 30px;
+  width:30px;
+}
+
+.allFishPics {
+  display: inline-block;
+  max-width: 250px;
+  margin: 10px;
+}
+
+.fishImg {
+  background-color: white;
+  padding: 10px;
+  margin: 10px;
 }
