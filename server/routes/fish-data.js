@@ -42,27 +42,24 @@ router.get("/", function(req, res){
 });
 
 router.post('/test', upload.single('file'), function (req, res, next) {
-  console.log("post hit");
-  // console.log("reqbody", req.body);
-  // console.log("reqfile", req.file);
+  console.log("post hit", req.body);
   var userEmail = req.decodedToken.email;
   var newFish = req.body;
   var newUpload = {
     created: Date.now(),
     file: req.file
   };
+
   Upload.create(newUpload, function (err, next){
     if (err) {
       next(err);
     } else {
       console.log("We have a bite!", newFish);
-      console.log("Uploaded File...", newUpload);
       //
       if(newFish != null) {
         newFish.email = userEmail;
         newFish.image = newUpload.file.filename;
         var fishToAdd = new Fish(newFish);
-        console.log("FishToAdd", fishToAdd);
         fishToAdd.save(function(err){
           if(err){
             console.log('There was an error inserting new fish, ', err);

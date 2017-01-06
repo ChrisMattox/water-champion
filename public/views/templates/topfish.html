@@ -1,4 +1,4 @@
-<div class="tFC">
+<!-- <div class="tFC"> -->
 <button ng-click="tfc.logIn()" class="authButton">Log In</button>
 <button ng-click="tfc.logOut()" class="authButton">Log Out</button>
 <div ng-hide="tfc.fishData.length > 0" class="parable">
@@ -12,7 +12,7 @@
 
   </div>
 
-  <div ng-if="tfc.fishData.length > 0">
+  <div ng-if="tfc.fishData.length > 0" class="centered">
 
     <div class="whosFish">
       <h2>Trophy Fish for {{tfc.currentUser.displayName}}</h2>
@@ -23,7 +23,9 @@
       <div class="row">
         <div ng-repeat="fish in tfc.fishData | filter: fish.species='bass' | orderBy: '-fishLength' | limitTo: '3'">
           <div class="col-sm-4 topFish" class="topFish" id="topFishId" ng-class="{gold: $index == 0, silver: $index == 1, bronze: $index == 2}">
+          <div class="fishPicContainer">
             <img ng-src='uploads/{{fish.image}}' class="fishPics"></img>
+          </div>
             <div class="topFishInfo">
             <h3 class="topFishSpecies">#{{$index + 1}} Bass</h3>
             <p>Length: {{fish.fishLength}} inches</p>
@@ -125,8 +127,10 @@
       <div class="row">
         <div ng-repeat="fish in tfc.fishData | filter: fish.species='rockbass' | orderBy: '-fishLength' | limitTo: '3'">
           <div class="col-sm-4 topFish"  id="topFishId" ng-class="{gold: $index == 0, silver: $index == 1, bronze: $index == 2}">
+            <div class="fishPicContainer">
             <img ng-src='uploads/{{fish.image}}' class="fishPics" ></img>
-                        <div class="topFishInfo">
+          </div>
+            <div class="topFishInfo">
             <h3 class="topFishSpecies">#{{$index + 1}} Rock Bass</h3>
             <p>Length: {{fish.fishLength}} inches</p>
             <p>Weight: {{fish.weight}} pounds</p>
@@ -140,4 +144,4 @@
       </div>
     </div>
   </div>
-</div>
+<!-- </div> -->

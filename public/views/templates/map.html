@@ -1,1 +1,6 @@
- <ng-map center="[44.832906, -93.300212]" default-style="false" class="mapSize"></ng-map>
+ <ng-map center="[46.96617777777778, -94.35716111111111]" default-style="false" class="mapSize">
+
+   <marker ng-repeat="fish in mc.fishData" position="[{{fish.lat}}, {{fish.long}}]">
+   </marker>
+
+ </ng-map>

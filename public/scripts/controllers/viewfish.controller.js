@@ -42,7 +42,6 @@ app.controller("ViewFishCtrl", ["$firebaseAuth", "$http", "FishDataFactory", "Au
 
 // lets go fishing and get some data
   function getFishies(){
-
     self.currentUser = AuthDataFactory.getCurrentUser(); //authentication
     if(self.currentUser) {
       self.currentUser.getToken().then(function(idToken){
@@ -387,9 +386,6 @@ app.controller("ViewFishCtrl", ["$firebaseAuth", "$http", "FishDataFactory", "Au
       getFishies();
     });
   }
-
-
-  console.log(FishDataFactory.picData());
 
   //function to sort arrays by most used
   function mode(arr){

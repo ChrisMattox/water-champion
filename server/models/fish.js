@@ -12,7 +12,10 @@ var fishSchema = new Schema({
     location: { type: String, required: true},
     gear: { type: String, required: true},
     weather: { type: String, required: true},
-    image: { type: String }
+    image: { type: String },
+    lat: { type: String},
+    long: { type: String },
+    make: { type: String }
 
 });
 
